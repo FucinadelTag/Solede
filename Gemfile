@@ -10,6 +10,8 @@ gem "middleman-blog", "~> 3.5.1"
 gem "prismic.io", require: "prismic"
 gem "prismic_middleman", :git => 'git://github.com/FucinadelTag/FdtGems'
 
+#:git => 'git://github.com/FucinadelTag/FdtGems'
+
 # FdtTools
 gem "fdt_middleman_tools", ">= 1.0.0"
 

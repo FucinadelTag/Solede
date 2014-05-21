@@ -3,16 +3,193 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%
+      page = prismic.getHomePage
+      pageData = prismic.getBlockData (page)
+    %>
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= data.page.title || "The Middleman" %></title>
+    <title><%= pageData ['title'] || "The Middleman" %></title>
+
+    <link rel="shortcut icon" href="https://lh4.googleusercontent.com/-4EFGp8NIxRg/UotMLOfvJtI/AAAAAAAAeGI/i8xYnYOxMBk/s16-no/favicon.ico" />
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600' rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="https://solede.rezdy.com/pluginJs"></script>
+    <script type="text/javascript">
+  function resizeIframe(iframe) {
+    iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
+  }
+</script>
 
     <%= stylesheet_link_tag "app", "style" %>
     <%= javascript_include_tag "modernizr" %>
+
+    <!--PLANYO -->
+    <script type="text/javascript">
+    // change the following values to match your settings
+    var planyo_site_id='14848'; // ID of your planyo site
+    var planyo_default_mode='upcoming_availability'; // one of: 'resource_list' (displays list of resources with photos, descriptions etc.), 'search' (displays the search box), 'empty' (will not display anything by default but will require you to either pass the resource ID as parameter in the URL (resource_id) or add an external search box or calendar preview), 'upcoming_availability' (displays a quick list of all upcoming availability)
+    var extra_search_fields=''; // comma-separated extra fields in the search box, e.g. 'Number of persons'. You first need to define them in settings/custom resource properties
+    var sort_fields='price'; // comma-separated sort fields for the search box -- a single field will hide the sort dropdown box
+    var planyo_resource_ordering='name'; // optional sort criterium for resource list
+    var planyo_js_library_used='jquery'; // set this to 'mootools' if you want to use mootools instead of jQuery
+    var planyo_include_js_library=true; // set this to false if your website already includes the Javascript library chosen in the live above (jQuery or mootools)
+    var planyo_attribs='?mode=resource_desc&resource_id=33230&ppp_refcode=solede.com'; // optionally you can insert the attribute string here
+    var planyo_resource_id=''; // optional: ID of the resource being reserved
+    var planyo_language='EN'; // you can optionally change the language here, e.g. 'FR' or 'ES' or pass the languge in the 'lang' parameter
+    var ulap_script="jsonp"; // leave this as "jsonp" for a plain-javascript implementation --OR-- if using a php/asp.net/java implementation, one of the ULAP scripts: "ulap.php", "ulap.aspx", "ulap.jsp", in such case you must download the advanced integration Planyo files from http://www.planyo.com/Plugins/PlanyoFiles/planyo-files.zip
+    var planyo_use_https=("https:" == document.location.protocol); // set this to true if embedding planyo on a secure website (SSL)
+    var planyo_files_location=(planyo_use_https ? "https" : "http") + '://www.planyo.com/Plugins/PlanyoFiles'; // relative or absolute directory where the planyo files are kept (leave unchanged for plain-javascript implementation, otherwise e.g. '/planyo-files' when using the ULAP scripts)
+    var empty_mode=false; // should be always set to false
+    </script>
+
+
   </head>
 
   <body class="<%= page_classes %>">
-    <%= yield %>
+
+  <div class="row">
+    <div class="large-3 medium-3 columns margin">
+      <img src="http://lh6.googleusercontent.com/-kB4Rqt-PtfU/UoY7VCn-9eI/AAAAAAAAeFE/-zHoH-MNlhA/w150-no/2013-11-15" />
+      <br />
+      Fatichi di meno, scopri di più!
+    </div>
+    <div class="large-9 columns">
+      <ul class="right button-group">
+      <li><a href="#" class="button">Link 1</a></li>
+      <li><a href="#" class="button">Link 2</a></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- End Header and Nav -->
+
+<!-- First Band (Slider) -->
+
+
+  <div class="row margin">
+    <div class="large-12 columns">
+      <ul class="example-orbit" data-orbit data-options="
+                                                        slide_number:false;
+                                                        navigation_arrows:false;
+                                                        bullets:false;
+                                                        timer:false;
+                                                        caption_class:my-orbit-caption">
+        <% pageData ['images'].each do |i, image| %>
+          <li>
+            <%= tag :img, :src => image["url"], :title => image["caption"] %>
+            <div class="my-orbit-caption">
+                    <h1 class="white"><%= pageData ['title'] %></h1>
+                    <h3 class="white"><%= pageData ['abstract'] %></h3>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+
+<!-- Three-up Content Blocks -->
+
+<div class="row">
+    <div class="large-12 columns">
+        <ul class="large-block-grid-2">
+
+            <% pageData ['blocks']['tours-a-milano']['blocks'].each do |i, block| %>
+                <li class="border-top">
+                    <div class="row">
+                    <div class="large-12 columns">
+                            <h3><%= block['title'] %></h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <% block ['images'].each do |i, image| %>
+                                <%= tag :img, :src => image["url"], :title => image["caption"] %>
+                            <% end %>
+                            <p />
+
+                            <dl class="tabs" data-tab>
+                                <% block ['sections'].each do |i, section| %>
+                                    <dd class="<%= i == 0 ? 'active' : nil %>"><a href="#<%= block['slug'] %>-<%= section['slug'] %>"><%= section['title'] %></a></dd>
+                                <% end %>
+                                <dd><a href="#<%= block['slug'] %>-prenotazione">Prenotazione</a></dd>
+                            </dl>
+
+                            <div class="tabs-content">
+                                <% block ['sections'].each do |i, section| %>
+                                    <div class="content <%= i == 0 ? 'active' : nil %>" id="<%= block['slug'] %>-<%= section['slug'] %>">
+                                        <%= section['body'] %>
+                                    </div>
+                                <% end %>
+                                <div class="content" id="<%= block['slug'] %>-prenotazione">
+                                    <iframe seamless frameborder="0" width="100%" height="600px" class="rezdy" src="https://solede.rezdy.com/calendarWidget/<%= block ['KeyValuePairs']['codice-rezdy']['value']%>"></iframe>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </li>
+
+            <% end %>
+
+        </ul>
+    </div>
+</div>
+
+<div class="boxWithImage">
+    <div class="mainContent">
+        <div class="title">
+            <div>
+                <h2 data-magellan-destination="chiSiamo" class="subheader" id="chiSiamo">Chi siamo</h2>
+            </div>
+        </div>
+        <div class="body">
+            <div class="large-left-12 columns">
+                <ul class="large-block-grid-2">
+                     <% pageData ['blocks']['professionisti-al-vostro-servizio']['blocks'].each do |i, block| %>
+
+                        <li>
+                            <h3 class="subheader"><%= block ['title']%></h3>
+
+                            <%= block ['body']%>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  <!-- Footer -->
+
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>&copy; Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
     <%= javascript_include_tag  "all" %>
   </body>
+
 </html>

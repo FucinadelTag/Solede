@@ -1,3 +1,103 @@
 @import "settings";
 @import "foundation.scss";
 
+$baseBlu: #009ee0;
+$evidence-color: #ffed00 !default;
+
+
+$ctaButton-header-color: $evidence-color !default;
+$ctaButton-radius: 20px !default;
+.ctaButton {
+    @include button($padding:$button-med, $bg:$ctaButton-header-color, $radius:$ctaButton-radius, $full-width:true, $disabled:false, $is-prefix:false);
+    color: #000;
+}
+
+.border-top {
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: $hr-border-color;
+    margin-top: $hr-margin;
+    margin-bottom: $hr-margin;
+}
+
+.margin {
+    margin-top: em-calc(10);
+}
+
+.white {
+  color: #fff
+}
+
+.my-orbit-caption {
+    @extend .orbit-caption;
+    @if $orbit-caption-position == "top" {
+        position: absolute;
+        top: 0;
+    }
+}
+
+
+//BOX
+$boxWithImage-has-border: yes !default;
+$boxWithImage-border-color: darken($panel-bg, 2%) !default;
+$boxWithImage-margin: rem-calc(10) !default;
+$boxWithImage-padding-bottom: rem-calc(10) !default;
+$boxWithImage-padding-top: rem-calc(0) !default;
+
+$boxWithImage-has-shadow: yes !default;
+$boxWithImage-hshadow-size: rem-calc(2) !default;
+$boxWithImage-vshadow-size: rem-calc(2) !default;
+$boxWithImage-blur-size: rem-calc(2) !default;
+$boxWithImage-shadow-color: #888888 !default;
+
+$p-li-fontStyle: normal !default;
+
+.boxWithImage {
+    @include grid-row;
+
+    @if $boxWithImage-has-shadow == yes {
+        border-style: solid;
+        border-width: 1px;
+        border-color: $boxWithImage-border-color;
+    }
+
+    margin-top: $boxWithImage-margin;
+    margin-bottom: $boxWithImage-margin;
+    padding-bottom: $boxWithImage-padding-bottom;
+    padding-top: $boxWithImage-padding-top;
+
+    @if $boxWithImage-has-shadow == yes {
+        -moz-box-shadow: 0 0 $boxWithImage-blur-size $boxWithImage-shadow-color;
+        -webkit-box-shadow: 0 0 $boxWithImage-blur-size$boxWithImage-shadow-color;
+        box-shadow: 0 0 $boxWithImage-blur-size $boxWithImage-shadow-color;
+    }
+
+
+        .mainContent {
+            @include grid-column($total-columns);
+
+            .title {
+                @include grid-row;;
+                div {
+                    @include grid-column(12);
+                }
+            }
+
+            .body {
+                @include grid-row;
+
+                @media #{$small} {
+                    @for $i from 1 through $total-columns {
+                        .large-left#{-$i} { @include grid-column($columns:$i,$collapse:null,$float:false); }
+                        .large-right#{-$i} { @include grid-column($columns:$i,$collapse:null,$float:false); }
+                    }
+                }
+
+                p, li {
+                    font-size: ($base-font-size - 3);
+                    font-style: $p-li-fontStyle;
+                }
+            }
+        }
+
+}
