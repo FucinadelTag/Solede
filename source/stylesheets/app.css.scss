@@ -45,9 +45,9 @@ $boxWithImage-padding-bottom: rem-calc(10) !default;
 $boxWithImage-padding-top: rem-calc(0) !default;
 
 $boxWithImage-has-shadow: yes !default;
-$boxWithImage-hshadow-size: rem-calc(2) !default;
-$boxWithImage-vshadow-size: rem-calc(2) !default;
-$boxWithImage-blur-size: rem-calc(2) !default;
+$boxWithImage-hshadow-size: rem-calc(1) !default;
+$boxWithImage-vshadow-size: rem-calc(1) !default;
+$boxWithImage-blur-size: rem-calc(1) !default;
 $boxWithImage-shadow-color: #888888 !default;
 
 $p-li-fontStyle: normal !default;
@@ -99,5 +99,66 @@ $p-li-fontStyle: normal !default;
                 }
             }
         }
+
+}
+
+$wufoo-columns: 4 !default;
+$wufoo-has-border: yes !default;
+$wufoo-border-color: darken($panel-bg, 20%) !default;
+$wufoo-header-color: $ctaButton-header-color !default;
+$wufoo-header-margin-top: rem-calc(12) !default;
+$wufoo-header-padding-bottom: rem-calc(12) !default;
+
+
+.wufooNew {
+    @media #{$small} {
+        @include grid-column(6);
+    }
+
+    @if $wufoo-has-border == yes {
+      border-style: solid;
+      border-width: 1px;
+      border-color: $wufoo-border-color;
+      box-shadow: 3px 3px 6px $wufoo-border-color;
+    }
+
+    .header {
+      margin-top: $wufoo-header-margin-top;
+      background-color: $wufoo-header-color;
+      text-align: center;
+      padding-top: $wufoo-header-padding-bottom;
+      padding-bottom: $wufoo-header-padding-bottom;
+      font-weight: bold;
+      color: #000000;
+      .big {
+        font-size: rem-calc(19);
+      }
+      .medium {
+        font-size: rem-calc(18);
+      }
+      .small {
+        font-size: rem-calc(15);
+      }
+
+    }
+  }
+
+  $numeroVerde-color: #008a2e !default;
+
+  div.box_nverde {
+    text-align: center;
+    line-height: em-calc(35px);
+    font-size: em-calc(18px);
+    color: $numeroVerde-color;
+    margin-bottom: em-calc(18px);
+    .numero {
+        font-size: em-calc(28px);
+    }
+}
+
+.medium {
+    p {
+        font-size: rem-calc(15);
+    }
 
 }

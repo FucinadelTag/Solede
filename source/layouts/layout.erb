@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <%
-      page = prismic.getHomePage
-      pageData = prismic.getBlockData (page)
+      site = prismic.get_by_tags ('site')
+      siteData = prismic.getBlockData (site.first)
+      pageData = siteData['blocks']['milano']
+
     %>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= pageData ['title'] || "The Middleman" %></title>
 
     <link rel="shortcut icon" href="https://lh4.googleusercontent.com/-4EFGp8NIxRg/UotMLOfvJtI/AAAAAAAAeGI/i8xYnYOxMBk/s16-no/favicon.ico" />
 
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600' rel='stylesheet' type='text/css' />
-    <script type="text/javascript" src="https://solede.rezdy.com/pluginJs"></script>
-    <script type="text/javascript">
-  function resizeIframe(iframe) {
-    iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
-  }
+
 </script>
 
     <%= stylesheet_link_tag "app", "style" %>
@@ -51,16 +49,16 @@
 
   <div class="row">
     <div class="large-3 medium-3 columns margin">
-      <img src="http://lh6.googleusercontent.com/-kB4Rqt-PtfU/UoY7VCn-9eI/AAAAAAAAeFE/-zHoH-MNlhA/w150-no/2013-11-15" />
+      <%= siteData ['KeyValuePairs']['logo']['value'].as_html (nil) %>
       <br />
-      Fatichi di meno, scopri di più!
+      <%= siteData ['KeyValuePairs']['pay-off']['value'].as_text %>
     </div>
-    <div class="large-9 columns">
+    <!-- <div class="large-9 columns">
       <ul class="right button-group">
       <li><a href="#" class="button">Link 1</a></li>
       <li><a href="#" class="button">Link 2</a></li>
       </ul>
-    </div>
+    </div> -->
   </div>
 
 <!-- End Header and Nav -->
@@ -89,14 +87,13 @@
     </div>
   </div>
 
-
 <!-- Three-up Content Blocks -->
 
 <div class="row">
     <div class="large-12 columns">
         <ul class="large-block-grid-2">
 
-            <% pageData ['blocks']['tours-a-milano']['blocks'].each do |i, block| %>
+            <% pageData ['blocks']['tours-milano']['blocks'].each do |i, block| %>
                 <li class="border-top">
                     <div class="row">
                     <div class="large-12 columns">
@@ -109,12 +106,13 @@
                                 <%= tag :img, :src => image["url"], :title => image["caption"] %>
                             <% end %>
                             <p />
+                            <%= partial("callToAction", :locals => { :siteData => siteData}) %>
 
                             <dl class="tabs" data-tab>
                                 <% block ['sections'].each do |i, section| %>
                                     <dd class="<%= i == 0 ? 'active' : nil %>"><a href="#<%= block['slug'] %>-<%= section['slug'] %>"><%= section['title'] %></a></dd>
                                 <% end %>
-                                <dd><a href="#<%= block['slug'] %>-prenotazione">Prenotazione</a></dd>
+                                <!-- <dd><a href="#<%= block['slug'] %>-prenotazione">Prenotazione</a></dd> -->
                             </dl>
 
                             <div class="tabs-content">
@@ -123,9 +121,9 @@
                                         <%= section['body'] %>
                                     </div>
                                 <% end %>
-                                <div class="content" id="<%= block['slug'] %>-prenotazione">
+                                <!-- <div class="content" id="<%= block['slug'] %>-prenotazione">
                                     <iframe seamless frameborder="0" width="100%" height="600px" class="rezdy" src="https://solede.rezdy.com/calendarWidget/<%= block ['KeyValuePairs']['codice-rezdy']['value']%>"></iframe>
-                                </div>
+                                </div> -->
 
                             </div>
 
@@ -141,17 +139,73 @@
     </div>
 </div>
 
+
+
+
+<div id="formContatti" class="row">
+
+    <div>
+        <h2 class="subheader" id="chiSiamo"><%= siteData ['KeyValuePairs']['box-form-title']['value'].as_text %></h2>
+    </div>
+
+    <div class="wufooNew columns hide-for-small">
+        <%= partial("wufooForm", :locals => { :siteData => siteData}) %>
+    </div>
+
+    <div class="large-6 medium-6 columns">
+        <ul class="large-block-grid-1">
+            <% pageData ['blocks']['rassicurazioni']['blocks'].each do |i, block| %>
+
+                <li>
+                    <h4 class="subheader"><%= block ['icona']%> <%= block ['title']%></h4>
+
+                    <span class="medium"> <%= block ['body']%> </span>
+                </li>
+            <% end %>
+        </ul>
+
+    </div>
+
+</div>
+
 <div class="boxWithImage">
     <div class="mainContent">
         <div class="title">
             <div>
-                <h2 data-magellan-destination="chiSiamo" class="subheader" id="chiSiamo">Chi siamo</h2>
+                <h2 class="subheader" id="chiSiamo"><%= pageData ['blocks']['condizioni-note']['title'] %></h2>
             </div>
+            <hr />
         </div>
         <div class="body">
             <div class="large-left-12 columns">
                 <ul class="large-block-grid-2">
-                     <% pageData ['blocks']['professionisti-al-vostro-servizio']['blocks'].each do |i, block| %>
+                     <% pageData ['blocks']['condizioni-note']['blocks'].each do |i, block| %>
+
+                        <li>
+                            <h3 class="subheader"><%= block ['icona']%> <%= block ['title']%></h3>
+
+                            <%= block ['body']%>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="boxWithImage">
+    <div class="mainContent">
+        <div class="title">
+            <div>
+                <h2 data-magellan-destination="chiSiamo" class="subheader" id="chiSiamo"><%= pageData ['blocks']['chi-siamo']['title'] %></h2>
+            </div>
+            <hr />
+        </div>
+        <div class="body">
+            <div class="large-left-12 columns">
+                <ul class="large-block-grid-2">
+                     <% pageData ['blocks']['chi-siamo']['blocks'].each do |i, block| %>
 
                         <li>
                             <h3 class="subheader"><%= block ['title']%></h3>
@@ -168,6 +222,7 @@
 
 
 
+
   <!-- Footer -->
 
   <footer class="row">
@@ -175,7 +230,7 @@
       <hr />
       <div class="row">
         <div class="large-6 columns">
-          <p>&copy; Copyright no one at all. Go to town.</p>
+          <p>&copy; Copyright Fucina del Tag</p>
         </div>
         <div class="large-6 columns">
           <ul class="inline-list right">
