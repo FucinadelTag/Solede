@@ -23,14 +23,29 @@
     <%= stylesheet_link_tag "app", "style" %>
     <%= javascript_include_tag "modernizr" %>
 
-
+    <% if current_page.data.headCode  %>
+        <%= current_page.data.headCode %>
+    <% end %>
   </head>
+
+  <!-- codice ANALITYCS -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-19846103-22', 'solede.com');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+
+    </script>
 
   <body class="<%= page_classes %>">
 
   <div class="row">
     <div class="large-3 medium-3 columns margin">
-      <%= siteData ['KeyValuePairs']['logo']['value'].as_html (nil) %>
+      <a href="/milan/"><%= siteData ['KeyValuePairs']['logo']['value'].as_html (nil) %></a>
       <br />
       <%= siteData ['KeyValuePairs']['pay-off']['value'].as_text %>
     </div>
@@ -46,156 +61,7 @@
 
 <!-- First Band (Slider) -->
 
-
-  <div class="row margin">
-    <div class="large-12 columns">
-      <ul class="example-orbit" data-orbit data-options="
-                                                        slide_number:false;
-                                                        navigation_arrows:false;
-                                                        bullets:false;
-                                                        timer:false;
-                                                        caption_class:my-orbit-caption">
-        <% pageData ['images'].each do |i, image| %>
-          <li>
-            <%= tag :img, :src => image["url"], :title => image["caption"] %>
-            <div class="my-orbit-caption">
-                    <h1 class="white"><%= pageData ['title'] %></h1>
-                    <h3 class="white"><%= pageData ['abstract'] %></h3>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-
-<!-- Three-up Content Blocks -->
-
-<div class="row">
-    <div class="large-12 columns">
-        <ul class="large-block-grid-2">
-
-            <% pageData ['blocks']['tours-milano']['blocks'].each do |i, block| %>
-                <li class="border-top">
-                    <div class="row">
-                    <div class="large-12 columns">
-                            <h3><%= block['title'] %></h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <% block ['images'].each do |i, image| %>
-                                <%= tag :img, :src => image["url"], :title => image["caption"] %>
-                            <% end %>
-                            <p />
-                            <%= partial("callToAction", :locals => { :siteData => siteData}) %>
-
-                            <dl class="tabs" data-tab>
-                                <% block ['sections'].each do |i, section| %>
-                                    <dd class="<%= i == 0 ? 'active' : nil %>"><a href="#<%= block['slug'] %>-<%= section['slug'] %>"><%= section['title'] %></a></dd>
-                                <% end %>
-                                <!-- <dd><a href="#<%= block['slug'] %>-prenotazione">Prenotazione</a></dd> -->
-                            </dl>
-
-                            <div class="tabs-content">
-                                <% block ['sections'].each do |i, section| %>
-                                    <div class="content <%= i == 0 ? 'active' : nil %>" id="<%= block['slug'] %>-<%= section['slug'] %>">
-                                        <%= section['body'] %>
-                                    </div>
-                                <% end %>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                </li>
-
-            <% end %>
-
-        </ul>
-    </div>
-</div>
-
-
-<div id="formContatti" class="row">
-
-    <div>
-        <h2 class="subheader" id="chiSiamo"><%= siteData ['KeyValuePairs']['box-form-title']['value'].as_text %></h2>
-    </div>
-
-    <div class="wufooNew columns hide-for-small">
-        <%= partial("wufooForm", :locals => { :siteData => siteData}) %>
-    </div>
-
-    <div class="large-6 medium-6 columns">
-        <ul class="large-block-grid-1">
-            <% pageData ['blocks']['rassicurazioni']['blocks'].each do |i, block| %>
-
-                <li>
-                    <h4 class="subheader"><%= block ['icona']%> <%= block ['title']%></h4>
-
-                    <span class="medium"> <%= block ['body']%> </span>
-                </li>
-            <% end %>
-        </ul>
-
-    </div>
-
-</div>
-
-<div class="boxWithImage">
-    <div class="mainContent">
-        <div class="title">
-            <div>
-                <h2 class="subheader" id="chiSiamo"><%= pageData ['blocks']['condizioni-note']['title'] %></h2>
-            </div>
-            <hr />
-        </div>
-        <div class="body">
-            <div class="large-left-12 columns">
-                <ul class="large-block-grid-2">
-                     <% pageData ['blocks']['condizioni-note']['blocks'].each do |i, block| %>
-
-                        <li>
-                            <h3 class="subheader"><%= block ['icona']%> <%= block ['title']%></h3>
-
-                            <%= block ['body']%>
-                        </li>
-                    <% end %>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="boxWithImage">
-    <div class="mainContent">
-        <div class="title">
-            <div>
-                <h2 data-magellan-destination="chiSiamo" class="subheader" id="chiSiamo"><%= pageData ['blocks']['chi-siamo']['title'] %></h2>
-            </div>
-            <hr />
-        </div>
-        <div class="body">
-            <div class="large-left-12 columns">
-                <ul class="large-block-grid-2">
-                     <% pageData ['blocks']['chi-siamo']['blocks'].each do |i, block| %>
-
-                        <li>
-                            <h3 class="subheader"><%= block ['title']%></h3>
-
-                            <%= block ['body']%>
-                        </li>
-                    <% end %>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
+<%= yield %>
 
 
   <!-- Footer -->
@@ -209,17 +75,39 @@
         </div>
         <div class="large-6 columns">
           <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
+            <!-- <li><a href="#">Link 1</a></li>
             <li><a href="#">Link 2</a></li>
             <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
+            <li><a href="#">Link 4</a></li> -->
           </ul>
         </div>
       </div>
     </div>
   </footer>
 
+    <% if current_page.data.conversionCode  %>
+      <%= current_page.data.conversionCode %>
+    <% end %>
+
+    <!-- Google Code per il tag di remarketing -->
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 977713311;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/977713311/?value=0&amp;guid=ON&amp;script=0"/>
+    </div>
+    </noscript>
+
+
     <%= javascript_include_tag  "all" %>
+
   </body>
 
 </html>

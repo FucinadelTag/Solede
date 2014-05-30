@@ -1,0 +1,32 @@
+---
+headCode: >
+conversionCode: >
+---
+
+<%
+    site = prismic.get_by_tags ('site')
+    siteData = prismic.getBlockData (site.first)
+    pageData = siteData['blocks']['grazie']
+%>
+
+<!-- End Header and Nav -->
+<div class="row margin">
+    <div class="large-12 columns">
+      <ul class="example-orbit" data-orbit data-options="
+                                                        slide_number:false;
+                                                        navigation_arrows:false;
+                                                        bullets:false;
+                                                        timer:false;
+                                                        caption_class:my-orbit-caption">
+        <% pageData ['images'].each do |i, image| %>
+          <li>
+            <%= tag :img, :src => image["url"], :title => image["caption"] %>
+            <div class="my-orbit-caption">
+                    <h1 class="white"><%= pageData ['title'] %></h1>
+                    <h3 class="white"><%= pageData ['abstract'] %></h3>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
