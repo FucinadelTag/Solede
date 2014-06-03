@@ -45,7 +45,7 @@
                                 <%= tag :img, :src => image["url"], :title => image["caption"] %>
                             <% end %>
                             <p />
-                            <%= partial("callToAction", :locals => { :siteData => siteData}) %>
+                            <%= partial("callToAction", :locals => { :siteData => siteData, :url => block ['KeyValuePairs']['url-rezdy']['value'].as_text}) %>
 
                             <dl class="tabs" data-tab>
                                 <% block ['sections'].each do |i, section| %>
