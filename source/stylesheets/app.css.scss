@@ -21,6 +21,13 @@ $ctaButton-radius: 20px !default;
     margin-bottom: $hr-margin;
 }
 
+.border {
+  border-style: solid;
+  border-width: 1px;
+  border-color: $hr-border-color;
+  padding-top: 10px;
+}
+
 .margin {
     margin-top: em-calc(10);
 }
