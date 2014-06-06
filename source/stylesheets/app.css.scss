@@ -10,6 +10,7 @@ $ctaButton-radius: 20px !default;
 .ctaButton {
     @include button($padding:$button-med, $bg:$ctaButton-header-color, $radius:$ctaButton-radius, $full-width:true, $disabled:false, $is-prefix:false);
     color: #000;
+    font-size: em-calc(25);
 }
 
 .border-top {
@@ -22,6 +23,14 @@ $ctaButton-radius: 20px !default;
 
 .margin {
     margin-top: em-calc(10);
+}
+
+.price {
+        font-size: rem-calc(25);
+        padding-top: em-calc(3);
+        padding-bottom: em-calc(3);
+        color: #000;
+        margin-bottom: em-calc(20);
 }
 
 .white {

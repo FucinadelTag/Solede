@@ -6,7 +6,7 @@
 
 <!-- End Header and Nav -->
 <div class="row margin">
-    <div class="large-12 columns">
+    <div class="large-12 medium-12 columns">
       <ul class="example-orbit" data-orbit data-options="
                                                         slide_number:false;
                                                         navigation_arrows:false;
@@ -29,24 +29,33 @@
 <!-- Three-up Content Blocks -->
 
 <div class="row">
-    <div class="large-12 columns">
+    <div class="large-12 medium-12 columns">
         <ul class="large-block-grid-2">
 
             <% pageData ['blocks']['tours-milano']['blocks'].each do |i, block| %>
-                <li class="border-top">
+                <li class="margin">
                     <div class="row">
-                    <div class="large-12 columns">
-                            <h3><%= block['title'] %></h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <% block ['images'].each do |i, image| %>
-                                <%= tag :img, :src => image["url"], :title => image["caption"] %>
-                            <% end %>
-                            <p />
-                            <%= partial("callToAction", :locals => { :siteData => siteData, :url => block ['KeyValuePairs']['url-rezdy']['value'].as_text}) %>
+                        <div class="large-12 medium-12 columns">
+                            <ul class="example-orbit" data-orbit data-options="
+                                                        slide_number:false;
+                                                        navigation_arrows:false;
+                                                        bullets:false;
+                                                        timer:false;
+                                                        caption_class:my-orbit-caption">
 
+                                <% block ['images'].each do |i, image| %>
+                                    <li>
+                                        <%= tag :img, :src => image["url"], :title => image["caption"] %>
+                                        <div class="my-orbit-caption">
+                                            <h2 class="white"><%= block['title'] %></h2>
+                                        </div>
+                                    </li>
+                                <% end %>
+                            </ul>
+                        </div>
+                        <p />
+                        <!-- <%= partial("callToAction", :locals => { :siteData => siteData, :url => block ['KeyValuePairs']['url-rezdy']['value'].as_text}) %>-->
+                        <div class="large-12 medium-12 columns margin">
                             <dl class="tabs" data-tab>
                                 <% block ['sections'].each do |i, section| %>
                                     <dd class="<%= i == 0 ? 'active' : nil %>"><a href="#<%= block['slug'] %>-<%= section['slug'] %>"><%= section['title'] %></a></dd>
@@ -57,19 +66,26 @@
                             <div class="tabs-content">
                                 <% block ['sections'].each do |i, section| %>
                                     <div class="content <%= i == 0 ? 'active' : nil %>" id="<%= block['slug'] %>-<%= section['slug'] %>">
-                                        <%= section['body'] %>
+                                        <% if section['slug'] == 'overview'  %>
+                                            <div class="row">
+                                                <div class="large-7 medium-7 columns">
+                                                    <iframe seamless="" frameborder="0" width="100%" height="550px" src="https://solede.rezdy.com/calendarWidget/<%=block ['KeyValuePairs']['code-rezdy']['value'].as_text%>"></iframe>
+                                                </div>
+                                                <div class="large-5 medium-5 columns">
+                                                    <span class="price">From: <%=block ['KeyValuePairs']['price']['value'].as_text%></span>
+                                                    <%= section['body'] %>
+                                                </div>
+                                            </div>
+                                        <% else %>
+                                            <%= section['body'] %>
+                                        <% end %>
                                     </div>
                                 <% end %>
                             </div>
-
-
-
                         </div>
                     </div>
                 </li>
-
             <% end %>
-
         </ul>
     </div>
 </div>
@@ -81,7 +97,7 @@
         <h2 class="subheader" id="chiSiamo"><%= siteData ['KeyValuePairs']['box-form-title']['value'].as_text %></h2>
     </div>
 
-    <div class="wufooNew columns hide-for-small">
+    <div class="wufooNew columns">
         <%= partial("wufooForm", :locals => { :siteData => siteData}) %>
     </div>
 
