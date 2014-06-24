@@ -108,6 +108,8 @@ activate :blog do |blog|
     }
 end
 
+page "blog/*", :layout => :blog
+
 
 # Add bower's directory to sprockets asset path
 after_configuration do
@@ -126,7 +128,7 @@ set :partials_dir, 'partials'
 activate :prismic_middleman do |f|
   f.url = 'https://solede.prismic.io/api'
   f.new_article_template = "fdt_templates/blog.tt"
-  f.defaultDocumentType = "block"
+  f.defaultDocumentType = "blog"
 
 end
 
