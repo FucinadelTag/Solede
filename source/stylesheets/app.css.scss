@@ -208,13 +208,13 @@ $wufoo-header-padding-bottom: rem-calc(12) !default;
 
 $rosso-color: #FF0A0A !default;
 .over {
-top: 50px;
+top: 10px;
 left: 20px;
 position: absolute;
 padding: em-calc(10px);
 background-color: rgba(255, 255, 255, 0.8);
+color: $rosso-color;
     h1  {
-        font-family: 'Open Sans Condensed';
         font-weight: bold;
         font-size: em-calc(38px);
         span {
@@ -223,7 +223,6 @@ background-color: rgba(255, 255, 255, 0.8);
     }
 
     h2  {
-        font-family: 'Open Sans Condensed';
         font-weight: bold;
         font-size: em-calc(25px);
         span {
@@ -233,8 +232,26 @@ background-color: rgba(255, 255, 255, 0.8);
 }
 
 .slide {
-        padding-bottom: rem-calc(20px);
+        padding-bottom: rem-calc(10px);
         .over {
-          top: 380px;
+          top: 350px;
         }
     }
+
+ul.small {
+  p, li {
+    font-size: 105%;
+  }
+}
+
+.menu {
+  margin-top: rem-calc(2px);
+  img {
+    padding-top: rem-calc(4px);
+  }
+
+  span {
+    position: relative;
+    top: 12px;
+  }
+}

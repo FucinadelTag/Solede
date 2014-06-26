@@ -11,12 +11,13 @@
 
     %>
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= pageData ['title'] || "The Middleman" %></title>
+    <title><%= pageData ['title'] || "Milan Solede Tours - Enjoy Milan in the most Special Way" %></title>
 
     <link rel="shortcut icon" href="https://lh4.googleusercontent.com/-4EFGp8NIxRg/UotMLOfvJtI/AAAAAAAAeGI/i8xYnYOxMBk/s16-no/favicon.ico" />
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600' rel='stylesheet' type='text/css' />
+
 
     <script type="text/javascript" src="https://solede.rezdy.com/pluginJs"></script>
 
@@ -44,13 +45,26 @@
 
   <body class="<%= page_classes %>">
 
-  <div class="row">
-    <div class="large-12 medium-12 columns margin">
-      <a href="/milan/"><%= siteData ['KeyValuePairs']['logo']['value'].as_html (nil) %></a>
-      <br />
-      <%= siteData ['KeyValuePairs']['pay-off']['value'].as_text %>
+
+  <!-- Nav Bar -->
+    <div class="contain-to-grid menu">
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+                <li class="logo">
+                    <a href="/milan/"><%= siteData ['KeyValuePairs']['logo']['value'].as_html (nil) %></a>
+                    <span><%= siteData ['KeyValuePairs']['pay-off']['value'].as_text %></span>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+            </ul>
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+                <ul class="right">
+                    <li><%= link_to 'Milan', '/milan' %></li>
+                    <li><%= link_to 'Blog', '/blog' %></li>
+                </ul>
+            </section>
+        </nav>
     </div>
-  </div>
 
 <!-- End Header and Nav -->
 

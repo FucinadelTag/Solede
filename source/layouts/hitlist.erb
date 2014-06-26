@@ -1,0 +1,17 @@
+<% wrap_layout :layout do%>
+
+    <%= partial("breadcrumbs", :locals => { :current_page => current_page}) %>
+
+    <div class="row margin">
+
+        <div class="large-9 medium-9 columns post" role="content">
+
+            <%= yield %>
+
+        </div>
+
+        <%= partial(:aside) %>
+
+    </div>
+
+<% end %>

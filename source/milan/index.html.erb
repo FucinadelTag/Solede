@@ -5,26 +5,26 @@
 %>
 
 <!-- End Header and Nav -->
-<div class="row margin">
+<div class="row slide">
     <div class="large-12 medium-12 columns">
-      <ul class="example-orbit" data-orbit data-options="
-                                                        slide_number:false;
-                                                        navigation_arrows:false;
-                                                        bullets:false;
-                                                        timer:false;
-                                                        caption_class:my-orbit-caption">
         <% pageData ['images'].each do |i, image| %>
-          <li>
-            <%= tag :img, :src => image["url"], :title => image["caption"] %>
-            <div class="my-orbit-caption">
-                    <h1 class="white"><%= pageData ['title'] %></h1>
-                    <h3 class="white"><%= pageData ['abstract'] %></h3>
+            <div class="row">
+                <div class="large-12 hide-for-small">
+                    <div id="featured">
+                        <%= tag :img, :src => image["url"], :title => image["caption"] %>
+                    </div>
+                </div>
             </div>
-          </li>
+            <div class="row over">
+                <div class="large-12 hide-for-small">
+                    <h1 ><%= pageData ['title'] %></h1>
+                    <h3 ><%= pageData ['abstract'] %></h3>
+                </div>
+            </div>
         <% end %>
-      </ul>
     </div>
-  </div>
+</div>
+
 
 <!-- Three-up Content Blocks -->
 
