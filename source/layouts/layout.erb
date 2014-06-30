@@ -11,7 +11,7 @@
 
     %>
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= pageData ['title'] || "Milan Solede Tours - Enjoy Milan in the most Special Way" %></title>
+    <title><%= data.page.title || pageData ['title'] %></title>
 
     <meta name="description" content="<%= pageData ['description'] %>">
 
