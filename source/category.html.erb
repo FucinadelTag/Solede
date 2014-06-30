@@ -1,9 +1,10 @@
 ---
-layout: blog
+layout: hitlist
 pageable: true
 per_page: 12
 ---
-Elenco articoli: <strong><%= category.gsub('_', ' ') %></strong>
+Category: <strong><%= category.gsub('_', ' ') %></strong>
+<hr />
 
 <% if paginate && num_pages > 1 %>
   <p>Page <%= page_number %> of <%= num_pages %></p>
@@ -12,30 +13,31 @@ Elenco articoli: <strong><%= category.gsub('_', ' ') %></strong>
     <p><%= link_to 'Previous page', prev_page %></p>
   <% end %>
 <% end %>
-<p>
-<ul class="large-block-grid-1">
-  <% page_articles.each_with_index do |article, i| %>
+<ul class="large-block-grid-1 medium-block-grid-1">
+<% page_articles.each_with_index do |article, i| %>
     <li>
         <article>
             <div class="row">
                 <div class="large-12 columns">
-                    <%= partial(:header_post, :locals => { :article => article}) %>
                     <% link_to article do %>
                         <%= tag :img, :src => article.metadata[:page]["image"], :title => article.title %>
                     <% end %>
+                    <div class="over">
+                      <%= partial("header_post", :locals => { :article => article}) %>
+                    </div>
                     <%= article.summary %>
-                    <%= link_to 'Read More…', article %>
+                    <%= link_to 'Read more...', article %>
                 </div>
             </div>
         </article>
+        <hr />
     </li>
-  <% end %>
+<% end %>
 </ul>
-</p>
+
 
 <% if paginate %>
   <% if next_page %>
     <p><%= link_to 'Next page', next_page %></p>
   <% end %>
 <% end %>
-

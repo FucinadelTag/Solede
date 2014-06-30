@@ -43,6 +43,10 @@
         ga('require', 'displayfeatures');
         ga('send', 'pageview');
 
+        ga('require', 'linker');
+        // Define which domains to autoLink.
+        ga('linker:autoLink', ['rezdy.com']);
+
     </script>
 
   <body class="<%= page_classes %>">
@@ -86,10 +90,8 @@
         </div>
         <div class="large-6 medium-6 columns">
           <ul class="inline-list right">
-            <!-- <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li> -->
+            <li><a href="https://www.facebook.com/soledetour" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://plus.google.com/u/0/101058928370988611288/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li>
           </ul>
         </div>
       </div>
@@ -115,6 +117,10 @@
     <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/977713311/?value=0&amp;guid=ON&amp;script=0"/>
     </div>
     </noscript>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4dee2147726e9946"></script>
+
 
 
     <%= javascript_include_tag  "all" %>
