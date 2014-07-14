@@ -1,0 +1,175 @@
+---
+# Warning: This file is auto-generated from the Prismic.io CMS. Local changes will overriden on next sync.
+
+title: >
+        <%= @title %>
+---
+<!-- End Header and Nav -->
+<div class="row slide">
+    <div class="large-12 medium-12 columns">
+        <% @pageData ['images'].each do |i, image| %>
+            <div class="row">
+                <div class="large-12 hide-for-small">
+                    <div id="featured">
+                        <%= tag :img, :src => image["url"], :title => image["caption"] %>
+                    </div>
+                </div>
+            </div>
+            <div class="row over">
+                <div class="large-12 hide-for-small">
+                    <h1 ><%= @pageData ['title'] %></h1>
+                    <h3 ><%= @pageData ['abstract'] %></h3>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+
+<!-- Three-up Content Blocks -->
+
+<div class="row">
+    <div class="large-12 medium-12 columns">
+        <ul class="large-block-grid-1">
+
+            <% @pageData ['blocks']['tours-milano']['blocks'].each do |i, block| %>
+                <li class="margin">
+                    <div class="row border">
+                        <div class="large-6 medium-6 columns">
+
+                                <% block ['images'].each do |i, image| %>
+                                        <%= tag :img, :src => image["url"], :title => image["caption"] %>
+                                <% end %>
+                        </div>
+
+                        <div class="large-6 medium-6 columns">
+                            <h2><%= block['title'] %></h2>
+                            <% block ['sections'].each do |i, section| %>
+                                    <% if section['slug'] == 'overview'  %>
+                                        <div class="row">
+                                            <div class="large-8 medium-8 columns">
+                                                <%= section['body'] %>
+                                            </div>
+                                            <div class="large-4 medium-4 columns">
+                                                <span class="price">From: <%=block ['KeyValuePairs']['price']['value'].as_text%></span>
+
+                                                <div class="row">
+                                                    <div class="small-12 columns">
+                                                        <a href="https://solede.rezdy.com/<%=block ['KeyValuePairs']['url-rezdy']['value'].as_text%>" class="button radius">Book Now</a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    <% end %>
+                            <% end %>
+                        </div>
+                    </div>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+</div>
+
+
+<div id="formContatti" class="row">
+
+    <div>
+        <h2 class="subheader" id="chiSiamo"><%= @siteData ['KeyValuePairs']['box-form-title']['value'].as_text %></h2>
+    </div>
+
+    <div class="wufooNew columns">
+        <p class="header">
+            <span class="big"><%= @siteData ['KeyValuePairs']['form-header-1']['value'].as_text %></span><br />
+            <span class="medium"><%= @siteData ['KeyValuePairs']['form-header-2']['value'].as_text %></span>
+        </p>
+
+
+    <div id="wufoo-r12clo6b1ulzexv">
+        Fill out my <a href="https://fucinadeltag.wufoo.com/forms/r12clo6b1ulzexv">online form</a>.
+        </div>
+        <script type="text/javascript">var r12clo6b1ulzexv;(function(d, t) {
+        var s = d.createElement(t), options = {
+        'userName':'fucinadeltag',
+        'formHash':'r12clo6b1ulzexv',
+        'autoResize':true,
+        'height':'781',
+        'async':true,
+        'host':'wufoo.com',
+        'header':'hide',
+        'defaultValues':'field358=::field451Data::',
+        'ssl':false};
+        s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+        s.onload = s.onreadystatechange = function() {
+        var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+        try { r12clo6b1ulzexv = new WufooForm();r12clo6b1ulzexv.initialize(options);r12clo6b1ulzexv.display(); } catch (e) {}};
+        var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+        })(document, 'script');</script>
+    </div>
+
+    <div class="large-6 medium-6 columns">
+        <ul class="large-block-grid-1">
+            <% @pageData ['blocks']['rassicurazioni']['blocks'].each do |i, block| %>
+
+                <li>
+                    <h4 class="subheader"><%= block ['icona']%> <%= block ['title']%></h4>
+
+                    <span class="medium"> <%= block ['body']%> </span>
+                </li>
+            <% end %>
+        </ul>
+
+    </div>
+
+</div>
+
+<div class="boxWithImage">
+    <div class="mainContent">
+        <div class="title">
+            <div>
+                <h2 class="subheader" id="chiSiamo"><%= @pageData ['blocks']['condizioni-note']['title'] %></h2>
+            </div>
+            <hr />
+        </div>
+        <div class="body">
+            <div class="large-left-12 columns">
+                <ul class="large-block-grid-2">
+                     <% @pageData ['blocks']['condizioni-note']['blocks'].each do |i, block| %>
+
+                        <li>
+                            <h3 class="subheader"><%= block ['icona']%> <%= block ['title']%></h3>
+
+                            <%= block ['body']%>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="boxWithImage">
+    <div class="mainContent">
+        <div class="title">
+            <div>
+                <h2 data-magellan-destination="chiSiamo" class="subheader" id="chiSiamo"><%= @pageData ['blocks']['chi-siamo']['title'] %></h2>
+            </div>
+            <hr />
+        </div>
+        <div class="body">
+            <div class="large-left-12 columns">
+                <ul class="large-block-grid-2">
+                     <% @pageData ['blocks']['chi-siamo']['blocks'].each do |i, block| %>
+
+                        <li>
+                            <h3 class="subheader"><%= block ['title']%></h3>
+
+                            <%= block ['body']%>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

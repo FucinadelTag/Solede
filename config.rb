@@ -125,10 +125,11 @@ set :images_dir, 'images'
 
 set :partials_dir, 'partials'
 
-activate :prismic_middleman do |f|
-  f.url = 'https://solede.prismic.io/api'
-  f.new_article_template = "fdt_templates/blog.tt"
-  f.defaultDocumentType = "blog"
+activate :prismic_middleman do |prismic|
+  prismic.url = 'https://solede.prismic.io/api'
+  prismic.default_extension = ".erb"
+  prismic.defaultDocumentType = "blog"
+  prismic.permalink = "/{category}/{title}.html"
 
 end
 
