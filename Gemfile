@@ -8,8 +8,8 @@ gem "middleman-blog", "~> 3.5.1"
 
 # Prismic.io content repository
 gem "prismic.io", require: "prismic"
-#gem "prismic_middleman", :git => 'git://github.com/FucinadelTag/FdtGems'
-gem "prismic_middleman", :path => '../FdtGems/'
+gem "prismic_middleman", :git => 'git://github.com/FucinadelTag/FdtGems'
+#gem "prismic_middleman", :path => '../FdtGems/'
 
 
 # FdtTools
