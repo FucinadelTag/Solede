@@ -1,0 +1,63 @@
+---
+# Warning: This file is auto-generated from the Prismic.io CMS. Local changes will overriden on next sync.
+
+title: >
+    <%= @title %>
+
+description: >
+    <%= @pageData ['description'] %>
+---
+
+<div class="row">
+    <div class="large-9 medium-9 columns">
+
+        <div class="row">
+            <div class="large-12 medium-12 columns">
+                <h1 ><%= @category["categoria.title"].as_text %> - <%= @pageData ['title'] %></h1>
+                <p class="abstract"><%= @pageData ['abstract'] %></p>
+                <% @pageData ['images'].each do |i, image| %>
+                    <%= tag :img, :src => image["url"], :title => image["caption"] %>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 medium-12 columns">
+                <ul class="large-block-grid-2">
+                    <li>
+                        <h2 class="subheader"> <%= @pageData ['sections']['tour-details']['title'] %></h2>
+                        <%= @pageData ['sections']['tour-details']['body'] %>
+                    </li>
+                    <li>
+                        <h2 class="subheader"> <%= @pageData ['sections']['more-info']['title'] %></h2>
+                        <i><%= @pageData ['sections']['more-info']['body'] %></i>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="large-3 medium-3 columns margin">
+        <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <span class="price">From: <%=@pageData ['KeyValuePairs']['price']['value'].as_text%></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 medium-12 columns panel bookpanel">
+                <h3 >Book a Tour</h3>
+                <iframe seamless="" frameborder="0" width="100%" height="750px" src="https://solede.rezdy.com/calendarWidget/<%=@pageData ['KeyValuePairs']['code-rezdy']['value'].as_text%>"></iframe>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <i><%= @pageData ['sections']['overview']['body'] %></i>
+            </div>
+        </div>
+
+    </div>
+</div>
