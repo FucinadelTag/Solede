@@ -6,7 +6,7 @@ $evidence-color: #ffed00 !default;
 
 
 $ctaButton-header-color: $evidence-color !default;
-$ctaButton-radius: 20px !default;
+$ctaButton-radius: 10px !default;
 .ctaButton {
     @include button($padding:$button-med, $bg:$ctaButton-header-color, $radius:$ctaButton-radius, $full-width:true, $disabled:false, $is-prefix:false);
     color: #000;
@@ -192,12 +192,14 @@ $wufoo-header-padding-bottom: rem-calc(12) !default;
   }
 }
 
-.blog {
-    .abstract{
+
+.abstract{
         font-style: italic;
         color: scale-color($body-font-color, $lightness: 35%);
         margin-top: rem-calc(10px);
     }
+
+.blog {
     .padding {
         padding-bottom: rem-calc(20px);
     }
@@ -255,4 +257,8 @@ ul.small {
     position: relative;
     top: 12px;
   }
+}
+
+.bookpanel {
+  background-color: $evidence-color;
 }
