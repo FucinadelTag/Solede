@@ -13,7 +13,7 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= data.page.title || pageData ['title'] %></title>
 
-    <meta name="description" content="<%= pageData ['description'] %>">
+    <meta name="description" content="<%= data.page.description || pageData ['description'] %>">
 
     <link rel="shortcut icon" href="https://lh4.googleusercontent.com/-4EFGp8NIxRg/UotMLOfvJtI/AAAAAAAAeGI/i8xYnYOxMBk/s16-no/favicon.ico" />
 
