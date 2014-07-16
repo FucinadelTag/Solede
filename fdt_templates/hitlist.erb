@@ -40,12 +40,18 @@ description: >
                         <div class="large-6 medium-6 columns">
 
                                 <% block ['images'].each do |i, image| %>
-                                        <%= tag :img, :src => image["url"], :title => image["caption"] %>
+                                        <a href="/<%= @category.slug %>/<%=block ['slug']%>" title="<%= block['title'] %>">
+                                            <%= tag :img, :src => image["url"], :title => image["caption"] %>
+                                        </a>
                                 <% end %>
                         </div>
 
                         <div class="large-6 medium-6 columns">
-                            <h2><%= block['title'] %></h2>
+                            <h2>
+                                <a href="/<%= @category.slug %>/<%=block ['slug']%>" title="<%= block['title'] %>">
+                                    <%= block['title'] %>
+                                </a>
+                            </h2>
                             <% block ['sections'].each do |i, section| %>
                                     <% if section['slug'] == 'overview'  %>
                                         <div class="row">
