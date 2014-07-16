@@ -38,6 +38,19 @@ description: >
             </div>
         </div>
 
+        <div class="row">
+            <div class="large-12 medium-12 columns">
+                <div
+                    class="yotpo yotpo-main-widget"
+                    data-product-id="<%=@pageData ['KeyValuePairs']['code-rezdy']['value'].as_text%>"
+                    data-name="<%= @title %>"
+                    data-url="https://solede.rezdy.com/calendarWidget/<%=@pageData ['KeyValuePairs']['code-rezdy']['value'].as_text%>"
+                    data-image-url="<%= @pageData ['images'][0]['url'] %>"
+                    data-description="<%= @pageData ['sections']['overview']['body'] %>">
+                </div>
+            </div>
+        </div>
+
     </div>
     <div class="large-3 medium-3 columns margin">
         <div class="row">
@@ -50,6 +63,15 @@ description: >
             <div class="large-12 medium-12 columns panel bookpanel">
                 <h3 >Book a Tour</h3>
                 <iframe seamless="" frameborder="0" width="100%" height="750px" src="https://solede.rezdy.com/calendarWidget/<%=@pageData ['KeyValuePairs']['code-rezdy']['value'].as_text%>"></iframe>
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <div class='yotpo QABottomLine'
+                    data-appkey='DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7'
+                    data-product-id='<%=@pageData ['KeyValuePairs']['code-rezdy']['value'].as_text%>'>
+                </div>
             </div>
         </div>
 
