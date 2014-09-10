@@ -44,7 +44,7 @@ description: >
                     class="yotpo yotpo-main-widget"
                     data-product-id="<%=@pageData ['KeyValuePairs']['code-rezdy']['value'].as_text%>"
                     data-name="<%= @title %>"
-                    data-url="https://solede.rezdy.com/calendarWidget/<%=@pageData ['KeyValuePairs']['code-rezdy']['value'].as_text%>"
+                    data-url="http://www.solede.com/<%= @category.slug %>/<%= @pageData ['slug']%>"
                     data-image-url="<%= @pageData ['images'][0]['url'] %>"
                     data-description="<%= @pageData ['sections']['overview']['body'] %>">
                 </div>
