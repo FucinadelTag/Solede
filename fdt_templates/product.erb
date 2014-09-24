@@ -62,7 +62,28 @@ description: >
         <div class="row">
             <div class="large-12 medium-12 columns panel bookpanel">
                 <h3 >Book a Tour</h3>
-                <iframe seamless="" frameborder="0" width="100%" height="750px" src="https://solede.rezdy.com/calendarWidget/<%=@pageData ['KeyValuePairs']['code-rezdy']['value'].as_text%>"></iframe>
+                <div id="myiFrame"></div>
+
+                <script>
+                    var linker;
+
+                    function addiFrame(divId, url, opt_hash) {
+                      return function(tracker) {
+                        window.linker = window.linker || new window.gaplugins.Linker(tracker);
+                        var iFrame = document.createElement('iFrame');
+                        iFrame.src = window.linker.decorate(url, opt_hash);
+                        iFrame.setAttribute("frameborder", 0);
+                        iFrame.setAttribute("width", "100%");
+                        iFrame.setAttribute("height", "750px");
+                        iFrame.setAttribute("seamless", "");
+                        document.getElementById(divId).appendChild(iFrame);
+                      };
+                    }
+
+                    // Dynamically add the iFrame to the page with proper linker parameters.
+                    ga(addiFrame('myiFrame', 'https://solede.rezdy.com/calendarWidget/<%=@pageData ['KeyValuePairs']['code-rezdy']['value'].as_text%>'));
+
+                </script>
             </div>
         </div>
 
