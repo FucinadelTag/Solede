@@ -122,10 +122,10 @@ description: >
                         window.linker = window.linker || new window.gaplugins.Linker(tracker);
                         var iFrame = document.createElement('iFrame');
                         iFrame.src = window.linker.decorate(url, opt_hash);
-                        iFrame.setAttribute("frameborder", 0);
-                        iFrame.setAttribute("width", "100%");
-                        iFrame.setAttribute("height", "750px");
-                        iFrame.setAttribute("seamless", "");
+                        iFrame.frameBorder = "0";
+                        iFrame.width = "100%";
+                        iFrame.height = "750px";
+                        iFrame.seamless = "seamless";
                         document.getElementById(divId).appendChild(iFrame);
                       };
                     }
