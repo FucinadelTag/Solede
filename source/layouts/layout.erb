@@ -130,6 +130,10 @@
 
     <%= javascript_include_tag  "all" %>
 
+    <% if current_page.data.javacriptCode  %>
+      <%= current_page.data.javacriptCode %>
+    <% end %>
+
   </body>
 
 </html>
