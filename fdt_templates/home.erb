@@ -2,43 +2,25 @@
 # Warning: This file is auto-generated from the Prismic.io CMS. Local changes will overriden on next sync.
 
 title: >
-        Solede Tours
+        <%= @title %>
 description: >
-    Solede tours
+    <%= @pageData ['description'] %>
 ---
 
 <div class="row slide">
     <div class="row">
         <div class="large-12 columns">
             <ul class="example-orbit" data-orbit data-options="timer:false;bullets:false;slide_number:false;">
-            
+            <% @pageData ['images'].each do |i, image| %>
                 <li>
                     <a href="/milan/" title="Florence Tours - Solede">
-                    <img src="https://prismic-io.s3.amazonaws.com/solede/611c04ed08e6c17531418c9b43c99660374c64bc.jpg" title="Milan Solede Tours - Enjoy Milan in the most Special Way" />
+                    <%= tag :img, :src => image["url"], :title => image["caption"] %>
                     <div class="over">
-                        <h1>Milan Solede Tours - Enjoy Milan in the most Special Way</h1>
+                        <h1><%= image["caption"] %></h1>
                     </div>
                     </a>
                 </li>
-            
-                <li>
-                    <a href="/milan/" title="Florence Tours - Solede">
-                    <img src="https://prismic-io.s3.amazonaws.com/solede/5e0af0634b63067216d5334a54aef586296e3e92.jpg" title="Florence Solede Tours - Enjoy Florence in the most Special Way" />
-                    <div class="over">
-                        <h1>Florence Solede Tours - Enjoy Florence in the most Special Way</h1>
-                    </div>
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/milan/" title="Florence Tours - Solede">
-                    <img src="https://prismic-io.s3.amazonaws.com/solede/e14e6c95b6660483acd3d66b45e0d7b5a27dd04c.jpg" title="Venice Solede Tours - Enjoy Venice in the most Special Way" />
-                    <div class="over">
-                        <h1>Venice Solede Tours - Enjoy Venice in the most Special Way</h1>
-                    </div>
-                    </a>
-                </li>
-            
+            <% end %>
             </ul>
         </div>
     </div>
@@ -81,67 +63,27 @@ description: >
     <div class="large-12 medium-12 columns">
         <ul class="large-block-grid-2">
 
-            
+            <% @pageData ['blocks']['italy-cities']['blocks'].each do |i, block| %>
                 <li class="margin">
                     <div class="row border slidelittle">
                         <div class="large-12 medium-12 columns outer">
 
-                                
+                                <% block ['images'].each do |i, image| %>
 
-                                    <a href="/milan/" title="Milan Solede Tours - Enjoy Milan in the most Special Way">
+                                    <a href="/<%= block ['category']['slug'] %>/" title="<%= block['title'] %>">
 
-                                        <img src="https://prismic-io.s3.amazonaws.com/solede/611c04ed08e6c17531418c9b43c99660374c64bc.jpg" title="Una veduta dei nuovo palazzi di Miano" />
+                                        <%= tag :img, :src => image["url"], :title => image["caption"] %>
 
                                         <div class="overcenter inner">
-                                            <h2>Milan Tours</h2>
+                                            <h2><%=block ['KeyValuePairs']['short-title']['value'].as_text%></h2>
                                         </div>
                                     </a>
-                                
+                                <% end %>
                         </div>
 
                     </div>
                 </li>
-            
-                <li class="margin">
-                    <div class="row border slidelittle">
-                        <div class="large-12 medium-12 columns outer">
-
-                                
-
-                                    <a href="/florence/" title="Florence Solede Tours - Enjoy Florence in the most Special Way">
-
-                                        <img src="https://prismic-io.s3.amazonaws.com/solede/96054de241699aeb735b7e0e4b2dcf23b9f23799.jpg" title="Una veduta centro di firenze" />
-
-                                        <div class="overcenter inner">
-                                            <h2>Florence Tour</h2>
-                                        </div>
-                                    </a>
-                                
-                        </div>
-
-                    </div>
-                </li>
-            
-                <li class="margin">
-                    <div class="row border slidelittle">
-                        <div class="large-12 medium-12 columns outer">
-
-                                
-
-                                    <a href="/venice/" title="Venice Solede Tours - Enjoy Venice in the most Special Way">
-
-                                        <img src="https://prismic-io.s3.amazonaws.com/solede/e14e6c95b6660483acd3d66b45e0d7b5a27dd04c.jpg" title="Vanice Canal Grande" />
-
-                                        <div class="overcenter inner">
-                                            <h2>Venice Tour</h2>
-                                        </div>
-                                    </a>
-                                
-                        </div>
-
-                    </div>
-                </li>
-            
+            <% end %>
         </ul>
     </div>
 </div>
