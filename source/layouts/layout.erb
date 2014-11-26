@@ -20,9 +20,6 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600' rel='stylesheet' type='text/css' />
 
-
-    <script type="text/javascript" src="https://solede.rezdy.com/pluginJs"></script>
-
     <script type="text/javascript">
       (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
     </script>
@@ -56,26 +53,51 @@
 
   <body class="<%= page_classes %>">
 
+  <div class="row menu">
+    <div class="large-10 medium-10 columns">
+        <a href="/"><%= siteData ['KeyValuePairs']['logo']['value'].as_html (nil) %></a>
+        <span class="payoff"><%= siteData ['KeyValuePairs']['pay-off']['value'].as_text %></span>
+    </div>
+    <div class="large-2 medium-2 columns">
+        <style>.rezdy-embedded-cart .hidden {display: none;}.rezdy-embedded-cart {cursor: hand;cursor: pointer;background: #fff;border: 1px solid #ccc;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;display: inline-block;padding: 5px 10px;}.rezdy-embedded-cart p {margin: 0;padding: 0;}.rezdy-embedded-cart .rezdy-cart-icon img {vertical-align: middle;}</style>
+        <script>window.rezdyCartLink = 'https://solede.rezdy.com/book';</script>
+        <script type="text/javascript" src="https://solede.rezdy.com/pluginJs?script=embedded-cart"></script>
 
+          <div id="rezdy-embedded-cart" class="rezdy-embedded-cart">
+              <span class="rezdy-cart-loading">Loading your cart...</span>
+              <span class="rezdy-cart-empty hidden">Your cart is empty</span>
+              <span class="rezdy-cart hidden">Items in your cart</span>
+              <span class="rezdy-cart-count hidden">0</span>
+              <span class="rezdy-cart-icon"><img src="https://solede.rezdy.com/themes/rezdy-booking/images/icons/cart.png" alt="Cart"></span>
+          </div>
+    </div>
+  </div>
+
+  <div class="row ">
+  <hr class="thin" />
   <!-- Nav Bar -->
-    <div class="contain-to-grid menu">
-        <nav class="top-bar" data-topbar>
+    <div class="contain-to-grid">
+        <nav class="top-bar" data-topbar role="navigation">
             <ul class="title-area">
-                <li class="logo">
-                    <a href="/milan/"><%= siteData ['KeyValuePairs']['logo']['value'].as_html (nil) %></a>
-                    <span><%= siteData ['KeyValuePairs']['pay-off']['value'].as_text %></span>
-                </li>
                 <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
             </ul>
             <section class="top-bar-section">
               <!-- Right Nav Section -->
-                <ul class="right">
+                <ul class="left">
                     <li><%= link_to 'Milan', '/milan' %></li>
+                    <li><%= link_to 'Florence', '/florence' %></li>
+                    <li><%= link_to 'Venice', '/venice' %></li>
+                </ul>
+                <ul class="right">
                     <li><%= link_to 'Blog', '/blog' %></li>
                 </ul>
             </section>
         </nav>
     </div>
+    <hr class="thin" />
+  </div>
+
+
 
 <!-- End Header and Nav -->
 

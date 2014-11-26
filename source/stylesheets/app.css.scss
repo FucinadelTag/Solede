@@ -1,6 +1,7 @@
 @import "settings";
 @import "foundation.scss";
 
+
 $baseBlu: #009ee0;
 $evidence-color: #ffed00 !default;
 
@@ -51,6 +52,8 @@ $ctaButton-radius: 10px !default;
         position: absolute;
         top: 0;
     }
+    top: 250px;
+    left: 20px
 }
 
 
@@ -221,7 +224,7 @@ color: $rosso-color;
         font-weight: bold;
         font-size: em-calc(38px);
         span {
-        color: $rosso-color;
+          color: $rosso-color;
         }
     }
 
@@ -241,19 +244,40 @@ color: $rosso-color;
         }
     }
 
+.outer {
+    position:relative;
+}
+
+.inner {
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position:absolute;
+    padding: rem-calc(10px);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
 ul.small {
   p, li {
     font-size: 105%;
   }
 }
 
+hr.thin {
+  margin-bottom: rem-calc(2px);
+  margin-top: rem-calc(2px);
+}
+
 .menu {
   margin-top: rem-calc(2px);
+  margin-bottom: rem-calc(2px);
   img {
     padding-top: rem-calc(4px);
   }
 
-  span {
+  .payoff {
     position: relative;
     top: 12px;
   }
