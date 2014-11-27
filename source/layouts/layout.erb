@@ -54,8 +54,10 @@
   <body class="<%= page_classes %>">
 
   <div class="row menu">
-    <div class="large-10 medium-10 columns">
-        <a href="/"><%= siteData ['KeyValuePairs']['logo']['value'].as_html (nil) %></a>
+    <div class="large-2 medium-2 columns">
+        <a href="/"><%= tag :img, :src => siteData ['KeyValuePairs']['logo']['picture'].get_view('little').url, :title => siteData ['KeyValuePairs']['logo']['value'].as_text %></a>
+    </div>
+    <div class="large-8 medium-8 columns">
         <span class="payoff"><%= siteData ['KeyValuePairs']['pay-off']['value'].as_text %></span>
     </div>
     <div class="large-2 medium-2 columns">

@@ -272,14 +272,20 @@ hr.thin {
 
 .menu {
   margin-top: rem-calc(2px);
-  margin-bottom: rem-calc(2px);
   img {
-    padding-top: rem-calc(4px);
+    //padding-top: rem-calc(4px);
   }
 
   .payoff {
     position: relative;
-    top: 12px;
+    top: 25px;
+    font-size: 140%;
+    color: $subheader-font-color;
+  }
+
+  .rezdy-embedded-cart {
+    position: relative;
+    top: 20px;
   }
 }
 
