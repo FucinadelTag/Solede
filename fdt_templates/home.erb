@@ -13,7 +13,7 @@ description: >
             <ul class="example-orbit" data-orbit data-options="timer:false;bullets:false;slide_number:false;">
             <% @pageData ['images'].each do |i, image| %>
                 <li>
-                    <a href="/milan/" title="Florence Tours - Solede">
+                    <a href="<%= image["link"] %>" title="Florence Tours - Solede">
                     <%= tag :img, :src => image["url"], :title => image["caption"] %>
                     <div class="over">
                         <h1><%= image["caption"] %></h1>
