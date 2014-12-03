@@ -52,6 +52,16 @@ description: >
                                     <%= block['title'] %>
                                 </a>
                             </h2>
+                            <div class="yotpo bottomLine"
+                                data-appkey="DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7"
+                                data-domain="www.solede.com"
+                                data-product-id="<%=block ['KeyValuePairs']['code-rezdy']['value'].as_text%>"
+                                data-name="<%= block['title'] %>"
+                                data-url="/<%= @category.slug %>/<%=block ['slug']%>"
+                                data-image-url="<%= block ['images'][0]['url'] %>"
+                                data-description="<%= block ['sections']['overview']['body'] %>">
+                            </div>
+                            <hr class="thin" />
                             <% block ['sections'].each do |i, section| %>
                                     <% if section['slug'] == 'overview'  %>
                                         <div class="row">
