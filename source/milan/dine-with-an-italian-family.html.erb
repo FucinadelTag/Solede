@@ -9,18 +9,73 @@ description: >
 ---
 
 <div class="row">
-    <div class="large-9 medium-9 columns">
+    <div class="large-12 medium-12 columns">
+        <h1 >Milan - Dine with an Italian Family!</h1>
+        <p class="abstract">Meet Davide and his Family to enjoy an authentic home-cooked dinner</p>
+    </div>
+</div>
+<div class="row">
+    <div class="large-3 medium-3 columns margin">
+        <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <span class="price">From: € 36.00</span>
+            </div>
+        </div>
 
         <div class="row">
+            <div class="large-12 medium-12 columns panel bookpanel">
+                <h3 >Book a Tour</h3>
+                <div id="myiFrame"></div>
+
+                <script>
+                    var linker;
+
+                    function addiFrame(divId, url, opt_hash) {
+                      return function(tracker) {
+                        window.linker = window.linker || new window.gaplugins.Linker(tracker);
+                        var iFrame = document.createElement('iFrame');
+                        iFrame.src = window.linker.decorate(url, opt_hash);
+                        iFrame.frameBorder = "0";
+                        iFrame.width = "100%";
+                        iFrame.height = "750px";
+                        iFrame.seamless = "seamless";
+                        document.getElementById(divId).appendChild(iFrame);
+                      };
+                    }
+
+                    // Dynamically add the iFrame to the page with proper linker parameters.
+                    ga(addiFrame('myiFrame', 'https://solede.rezdy.com/calendarWidget/43167'));
+
+                </script>
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <div class='yotpo QABottomLine'
+                    data-appkey='DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7'
+                    data-product-id='43167'>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <i><p><strong>DINNER DESIGNED BY BRINGNAME</strong></p>
+
+<p><strong>Bringname is a unique social food experience.</strong><br>It gives you the chance to dine with an authentic Milanese family, learn about its lifestyle and local cuisine.<br>You can choose what kind of menu options you would like to taste: meat, fish or vegetarian menu.<br>All menus are homemade with fresh seasonal and organic Italian food.</p></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="large-9 medium-9 columns">
+        <div class="row">
             <div class="large-12 medium-12 columns">
-                <h1 >Milan - Dine with an Italian Family!</h1>
-                <p class="abstract">Meet Davide and his Family to enjoy an authentic home-cooked dinner</p>
                 
                     <img src="https://prismic-io.s3.amazonaws.com/solede/cd609acb83fa60c7897f397ce32c7079f48fe937.jpg" />
                 
             </div>
         </div>
-
         <div class="row">
             <div class="large-12 medium-12 columns">
                 <ul class="large-block-grid-2">
@@ -114,59 +169,6 @@ description: >
 
 <p><strong>Bringname is a unique social food experience.</strong><br>It gives you the chance to dine with an authentic Milanese family, learn about its lifestyle and local cuisine.<br>You can choose what kind of menu options you would like to taste: meat, fish or vegetarian menu.<br>All menus are homemade with fresh seasonal and organic Italian food.</p>">
                 </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="large-3 medium-3 columns margin">
-        <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <span class="price">From: € 36.00</span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="large-12 medium-12 columns panel bookpanel">
-                <h3 >Book a Tour</h3>
-                <div id="myiFrame"></div>
-
-                <script>
-                    var linker;
-
-                    function addiFrame(divId, url, opt_hash) {
-                      return function(tracker) {
-                        window.linker = window.linker || new window.gaplugins.Linker(tracker);
-                        var iFrame = document.createElement('iFrame');
-                        iFrame.src = window.linker.decorate(url, opt_hash);
-                        iFrame.frameBorder = "0";
-                        iFrame.width = "100%";
-                        iFrame.height = "750px";
-                        iFrame.seamless = "seamless";
-                        document.getElementById(divId).appendChild(iFrame);
-                      };
-                    }
-
-                    // Dynamically add the iFrame to the page with proper linker parameters.
-                    ga(addiFrame('myiFrame', 'https://solede.rezdy.com/calendarWidget/43167'));
-
-                </script>
-            </div>
-        </div>
-
-         <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <div class='yotpo QABottomLine'
-                    data-appkey='DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7'
-                    data-product-id='43167'>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <i><p><strong>DINNER DESIGNED BY BRINGNAME</strong></p>
-
-<p><strong>Bringname is a unique social food experience.</strong><br>It gives you the chance to dine with an authentic Milanese family, learn about its lifestyle and local cuisine.<br>You can choose what kind of menu options you would like to taste: meat, fish or vegetarian menu.<br>All menus are homemade with fresh seasonal and organic Italian food.</p></i>
             </div>
         </div>
 

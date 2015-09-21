@@ -9,18 +9,71 @@ description: >
 ---
 
 <div class="row">
-    <div class="large-9 medium-9 columns">
+    <div class="large-12 medium-12 columns">
+        <h1 >Milan - Como Tour</h1>
+        <p class="abstract">Get in one day all the emotions of Como Lake. In the strikingly beautiful scenery of world famous Lake, Como is a charming lakeside town, surrounded by scenic mountains.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="large-3 medium-3 columns margin">
+        <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <span class="price">From: € 79.00</span>
+            </div>
+        </div>
 
         <div class="row">
+            <div class="large-12 medium-12 columns panel bookpanel">
+                <h3 >Book a Tour</h3>
+                <div id="myiFrame"></div>
+
+                <script>
+                    var linker;
+
+                    function addiFrame(divId, url, opt_hash) {
+                      return function(tracker) {
+                        window.linker = window.linker || new window.gaplugins.Linker(tracker);
+                        var iFrame = document.createElement('iFrame');
+                        iFrame.src = window.linker.decorate(url, opt_hash);
+                        iFrame.frameBorder = "0";
+                        iFrame.width = "100%";
+                        iFrame.height = "750px";
+                        iFrame.seamless = "seamless";
+                        document.getElementById(divId).appendChild(iFrame);
+                      };
+                    }
+
+                    // Dynamically add the iFrame to the page with proper linker parameters.
+                    ga(addiFrame('myiFrame', 'https://solede.rezdy.com/calendarWidget/31364'));
+
+                </script>
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <div class='yotpo QABottomLine'
+                    data-appkey='DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7'
+                    data-product-id='31364'>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <i><ul><li>Morning Trip to Como Lake from Milan</li><li>Take a scenic boat trip on Como Lake</li><li>Visit the old town of Como</li></ul></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="large-9 medium-9 columns">
+        <div class="row">
             <div class="large-12 medium-12 columns">
-                <h1 >Milan - Como Tour</h1>
-                <p class="abstract">Get in one day all the emotions of Como Lake. In the strikingly beautiful scenery of world famous Lake, Como is a charming lakeside town, surrounded by scenic mountains.</p>
                 
                     <img src="https://prismic-io.s3.amazonaws.com/solede/318f692f8e1ac9edbf0d0ab38a2684c84f51f152.jpg" />
                 
             </div>
         </div>
-
         <div class="row">
             <div class="large-12 medium-12 columns">
                 <ul class="large-block-grid-2">
@@ -98,57 +151,6 @@ description: >
                     data-image-url="https://prismic-io.s3.amazonaws.com/solede/318f692f8e1ac9edbf0d0ab38a2684c84f51f152.jpg"
                     data-description="<ul><li>Morning Trip to Como Lake from Milan</li><li>Take a scenic boat trip on Como Lake</li><li>Visit the old town of Como</li></ul>">
                 </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="large-3 medium-3 columns margin">
-        <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <span class="price">From: € 79.00</span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="large-12 medium-12 columns panel bookpanel">
-                <h3 >Book a Tour</h3>
-                <div id="myiFrame"></div>
-
-                <script>
-                    var linker;
-
-                    function addiFrame(divId, url, opt_hash) {
-                      return function(tracker) {
-                        window.linker = window.linker || new window.gaplugins.Linker(tracker);
-                        var iFrame = document.createElement('iFrame');
-                        iFrame.src = window.linker.decorate(url, opt_hash);
-                        iFrame.frameBorder = "0";
-                        iFrame.width = "100%";
-                        iFrame.height = "750px";
-                        iFrame.seamless = "seamless";
-                        document.getElementById(divId).appendChild(iFrame);
-                      };
-                    }
-
-                    // Dynamically add the iFrame to the page with proper linker parameters.
-                    ga(addiFrame('myiFrame', 'https://solede.rezdy.com/calendarWidget/31364'));
-
-                </script>
-            </div>
-        </div>
-
-         <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <div class='yotpo QABottomLine'
-                    data-appkey='DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7'
-                    data-product-id='31364'>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <i><ul><li>Morning Trip to Como Lake from Milan</li><li>Take a scenic boat trip on Como Lake</li><li>Visit the old town of Como</li></ul></i>
             </div>
         </div>
 

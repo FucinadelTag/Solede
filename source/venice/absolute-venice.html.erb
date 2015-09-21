@@ -9,18 +9,71 @@ description: >
 ---
 
 <div class="row">
-    <div class="large-9 medium-9 columns">
+    <div class="large-12 medium-12 columns">
+        <h1 >Venice - Absolute Venice</h1>
+        <p class="abstract">Enjoy a complete walking tour of Venice and then skip the lines to explore the Doge‘s Palace and St. Mark‘s Basilica with your expert local guide. All this and much more in just one great combo tour!</p>
+    </div>
+</div>
+<div class="row">
+    <div class="large-3 medium-3 columns margin">
+        <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <span class="price">From: € 70.00</span>
+            </div>
+        </div>
 
         <div class="row">
+            <div class="large-12 medium-12 columns panel bookpanel">
+                <h3 >Book a Tour</h3>
+                <div id="myiFrame"></div>
+
+                <script>
+                    var linker;
+
+                    function addiFrame(divId, url, opt_hash) {
+                      return function(tracker) {
+                        window.linker = window.linker || new window.gaplugins.Linker(tracker);
+                        var iFrame = document.createElement('iFrame');
+                        iFrame.src = window.linker.decorate(url, opt_hash);
+                        iFrame.frameBorder = "0";
+                        iFrame.width = "100%";
+                        iFrame.height = "750px";
+                        iFrame.seamless = "seamless";
+                        document.getElementById(divId).appendChild(iFrame);
+                      };
+                    }
+
+                    // Dynamically add the iFrame to the page with proper linker parameters.
+                    ga(addiFrame('myiFrame', 'https://solede.rezdy.com/calendarWidget/46538'));
+
+                </script>
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <div class='yotpo QABottomLine'
+                    data-appkey='DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7'
+                    data-product-id='46538'>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <i><ul><li>Venice walking tour</li><li>Skip the Line Access to Palazzo Ducale</li><li>Skip the Line Access to St. Mark’s Basilica</li></ul></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="large-9 medium-9 columns">
+        <div class="row">
             <div class="large-12 medium-12 columns">
-                <h1 >Venice - Absolute Venice</h1>
-                <p class="abstract">Enjoy a complete walking tour of Venice and then skip the lines to explore the Doge‘s Palace and St. Mark‘s Basilica with your expert local guide. All this and much more in just one great combo tour!</p>
                 
                     <img src="https://prismic-io.s3.amazonaws.com/solede/fa45ff2311250cbbb1a8fc2f160aa975bb5c704c_absolute-venice.jpg" />
                 
             </div>
         </div>
-
         <div class="row">
             <div class="large-12 medium-12 columns">
                 <ul class="large-block-grid-2">
@@ -104,57 +157,6 @@ description: >
                     data-image-url="https://prismic-io.s3.amazonaws.com/solede/fa45ff2311250cbbb1a8fc2f160aa975bb5c704c_absolute-venice.jpg"
                     data-description="<ul><li>Venice walking tour</li><li>Skip the Line Access to Palazzo Ducale</li><li>Skip the Line Access to St. Mark’s Basilica</li></ul>">
                 </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="large-3 medium-3 columns margin">
-        <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <span class="price">From: € 70.00</span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="large-12 medium-12 columns panel bookpanel">
-                <h3 >Book a Tour</h3>
-                <div id="myiFrame"></div>
-
-                <script>
-                    var linker;
-
-                    function addiFrame(divId, url, opt_hash) {
-                      return function(tracker) {
-                        window.linker = window.linker || new window.gaplugins.Linker(tracker);
-                        var iFrame = document.createElement('iFrame');
-                        iFrame.src = window.linker.decorate(url, opt_hash);
-                        iFrame.frameBorder = "0";
-                        iFrame.width = "100%";
-                        iFrame.height = "750px";
-                        iFrame.seamless = "seamless";
-                        document.getElementById(divId).appendChild(iFrame);
-                      };
-                    }
-
-                    // Dynamically add the iFrame to the page with proper linker parameters.
-                    ga(addiFrame('myiFrame', 'https://solede.rezdy.com/calendarWidget/46538'));
-
-                </script>
-            </div>
-        </div>
-
-         <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <div class='yotpo QABottomLine'
-                    data-appkey='DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7'
-                    data-product-id='46538'>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <i><ul><li>Venice walking tour</li><li>Skip the Line Access to Palazzo Ducale</li><li>Skip the Line Access to St. Mark’s Basilica</li></ul></i>
             </div>
         </div>
 

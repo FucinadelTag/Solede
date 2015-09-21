@@ -9,18 +9,71 @@ description: >
 ---
 
 <div class="row">
-    <div class="large-9 medium-9 columns">
+    <div class="large-12 medium-12 columns">
+        <h1 >Milan - Last Supper and Tram Tour</h1>
+        <p class="abstract">Get the chance to visit The Last Supper by Leonardo Da Vinci, and visit the top attractions of Milan in the most iconic and memorable way, on an city cable car!</p>
+    </div>
+</div>
+<div class="row">
+    <div class="large-3 medium-3 columns margin">
+        <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <span class="price">From: € 57.00</span>
+            </div>
+        </div>
 
         <div class="row">
+            <div class="large-12 medium-12 columns panel bookpanel">
+                <h3 >Book a Tour</h3>
+                <div id="myiFrame"></div>
+
+                <script>
+                    var linker;
+
+                    function addiFrame(divId, url, opt_hash) {
+                      return function(tracker) {
+                        window.linker = window.linker || new window.gaplugins.Linker(tracker);
+                        var iFrame = document.createElement('iFrame');
+                        iFrame.src = window.linker.decorate(url, opt_hash);
+                        iFrame.frameBorder = "0";
+                        iFrame.width = "100%";
+                        iFrame.height = "750px";
+                        iFrame.seamless = "seamless";
+                        document.getElementById(divId).appendChild(iFrame);
+                      };
+                    }
+
+                    // Dynamically add the iFrame to the page with proper linker parameters.
+                    ga(addiFrame('myiFrame', 'https://solede.rezdy.com/calendarWidget/42558'));
+
+                </script>
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <div class='yotpo QABottomLine'
+                    data-appkey='DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7'
+                    data-product-id='42558'>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <i><ul><li>Half-day sightseeing tour</li><li>Tickets of The Last Supper by Leonardo da Vinci</li><li>Hop on Hop off tour by historical Tram</li></ul></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="large-9 medium-9 columns">
+        <div class="row">
             <div class="large-12 medium-12 columns">
-                <h1 >Milan - Last Supper and Tram Tour</h1>
-                <p class="abstract">Get the chance to visit The Last Supper by Leonardo Da Vinci, and visit the top attractions of Milan in the most iconic and memorable way, on an city cable car!</p>
                 
                     <img src="https://prismic-io.s3.amazonaws.com/solede/0bc11b91bf903e5184212aa1150fc32a521701ed_ultima-cenajpg" />
                 
             </div>
         </div>
-
         <div class="row">
             <div class="large-12 medium-12 columns">
                 <ul class="large-block-grid-2">
@@ -96,57 +149,6 @@ description: >
                     data-image-url="https://prismic-io.s3.amazonaws.com/solede/0bc11b91bf903e5184212aa1150fc32a521701ed_ultima-cenajpg"
                     data-description="<ul><li>Half-day sightseeing tour</li><li>Tickets of The Last Supper by Leonardo da Vinci</li><li>Hop on Hop off tour by historical Tram</li></ul>">
                 </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="large-3 medium-3 columns margin">
-        <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <span class="price">From: € 57.00</span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="large-12 medium-12 columns panel bookpanel">
-                <h3 >Book a Tour</h3>
-                <div id="myiFrame"></div>
-
-                <script>
-                    var linker;
-
-                    function addiFrame(divId, url, opt_hash) {
-                      return function(tracker) {
-                        window.linker = window.linker || new window.gaplugins.Linker(tracker);
-                        var iFrame = document.createElement('iFrame');
-                        iFrame.src = window.linker.decorate(url, opt_hash);
-                        iFrame.frameBorder = "0";
-                        iFrame.width = "100%";
-                        iFrame.height = "750px";
-                        iFrame.seamless = "seamless";
-                        document.getElementById(divId).appendChild(iFrame);
-                      };
-                    }
-
-                    // Dynamically add the iFrame to the page with proper linker parameters.
-                    ga(addiFrame('myiFrame', 'https://solede.rezdy.com/calendarWidget/42558'));
-
-                </script>
-            </div>
-        </div>
-
-         <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <div class='yotpo QABottomLine'
-                    data-appkey='DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7'
-                    data-product-id='42558'>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <i><ul><li>Half-day sightseeing tour</li><li>Tickets of The Last Supper by Leonardo da Vinci</li><li>Hop on Hop off tour by historical Tram</li></ul></i>
             </div>
         </div>
 

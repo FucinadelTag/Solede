@@ -9,18 +9,71 @@ description: >
 ---
 
 <div class="row">
-    <div class="large-9 medium-9 columns">
+    <div class="large-12 medium-12 columns">
+        <h1 >Rome - Imperial Rome</h1>
+        <p class="abstract">Get only the best from your trip to Rome and uncover the secrets of the Colosseum, Roman Forum and Palatine Hill with Skip the Line Access at all three sites.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="large-3 medium-3 columns margin">
+        <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <span class="price">From: € 53.00</span>
+            </div>
+        </div>
 
         <div class="row">
+            <div class="large-12 medium-12 columns panel bookpanel">
+                <h3 >Book a Tour</h3>
+                <div id="myiFrame"></div>
+
+                <script>
+                    var linker;
+
+                    function addiFrame(divId, url, opt_hash) {
+                      return function(tracker) {
+                        window.linker = window.linker || new window.gaplugins.Linker(tracker);
+                        var iFrame = document.createElement('iFrame');
+                        iFrame.src = window.linker.decorate(url, opt_hash);
+                        iFrame.frameBorder = "0";
+                        iFrame.width = "100%";
+                        iFrame.height = "750px";
+                        iFrame.seamless = "seamless";
+                        document.getElementById(divId).appendChild(iFrame);
+                      };
+                    }
+
+                    // Dynamically add the iFrame to the page with proper linker parameters.
+                    ga(addiFrame('myiFrame', 'https://solede.rezdy.com/calendarWidget/46602'));
+
+                </script>
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <div class='yotpo QABottomLine'
+                    data-appkey='DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7'
+                    data-product-id='46602'>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 medium-12 columns panel">
+                <i><ul><li>Explore Ancient Rome with a local guide</li><li>Enter inside the Colosseum</li><li>Visit the Roman Forum</li><li>See the Arch of Constantine</li><li>See Rome from the Palatine Hill</li></ul></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="large-9 medium-9 columns">
+        <div class="row">
             <div class="large-12 medium-12 columns">
-                <h1 >Rome - Imperial Rome</h1>
-                <p class="abstract">Get only the best from your trip to Rome and uncover the secrets of the Colosseum, Roman Forum and Palatine Hill with Skip the Line Access at all three sites.</p>
                 
                     <img src="https://prismic-io.s3.amazonaws.com/solede/3c0a9602b0f6587d9d6a2e6255613abed5120775_imperial-rome.jpg" />
                 
             </div>
         </div>
-
         <div class="row">
             <div class="large-12 medium-12 columns">
                 <ul class="large-block-grid-2">
@@ -104,57 +157,6 @@ description: >
                     data-image-url="https://prismic-io.s3.amazonaws.com/solede/3c0a9602b0f6587d9d6a2e6255613abed5120775_imperial-rome.jpg"
                     data-description="<ul><li>Explore Ancient Rome with a local guide</li><li>Enter inside the Colosseum</li><li>Visit the Roman Forum</li><li>See the Arch of Constantine</li><li>See Rome from the Palatine Hill</li></ul>">
                 </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="large-3 medium-3 columns margin">
-        <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <span class="price">From: € 53.00</span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="large-12 medium-12 columns panel bookpanel">
-                <h3 >Book a Tour</h3>
-                <div id="myiFrame"></div>
-
-                <script>
-                    var linker;
-
-                    function addiFrame(divId, url, opt_hash) {
-                      return function(tracker) {
-                        window.linker = window.linker || new window.gaplugins.Linker(tracker);
-                        var iFrame = document.createElement('iFrame');
-                        iFrame.src = window.linker.decorate(url, opt_hash);
-                        iFrame.frameBorder = "0";
-                        iFrame.width = "100%";
-                        iFrame.height = "750px";
-                        iFrame.seamless = "seamless";
-                        document.getElementById(divId).appendChild(iFrame);
-                      };
-                    }
-
-                    // Dynamically add the iFrame to the page with proper linker parameters.
-                    ga(addiFrame('myiFrame', 'https://solede.rezdy.com/calendarWidget/46602'));
-
-                </script>
-            </div>
-        </div>
-
-         <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <div class='yotpo QABottomLine'
-                    data-appkey='DZN49lELbtzCPmNdQuZOrPTUqFWkvpepBH0Bf8C7'
-                    data-product-id='46602'>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="large-12 medium-12 columns panel">
-                <i><ul><li>Explore Ancient Rome with a local guide</li><li>Enter inside the Colosseum</li><li>Visit the Roman Forum</li><li>See the Arch of Constantine</li><li>See Rome from the Palatine Hill</li></ul></i>
             </div>
         </div>
 

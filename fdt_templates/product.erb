@@ -9,49 +9,12 @@ description: >
 ---
 
 <div class="row">
-    <div class="large-9 medium-9 columns">
-
-        <div class="row">
-            <div class="large-12 medium-12 columns">
-                <h1 ><%= @category["categoria.title"].as_text %> - <%= @pageData ['title'] %></h1>
-                <p class="abstract"><%= @pageData ['abstract'] %></p>
-                <% @pageData ['images'].each do |i, image| %>
-                    <%= tag :img, :src => image["url"], :title => image["caption"] %>
-                <% end %>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="large-12 medium-12 columns">
-                <ul class="large-block-grid-2">
-                    <li>
-                        <h2 class="subheader"> <%= @pageData ['sections']['tour-details']['title'] %></h2>
-                        <%= @pageData ['sections']['tour-details']['body'] %>
-                    </li>
-                    <li>
-                        <h2 class="subheader"> <%= @pageData ['sections']['more-info']['title'] %></h2>
-                        <i><%= @pageData ['sections']['more-info']['body'] %></i>
-                    </li>
-                </ul>
-
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="large-12 medium-12 columns">
-                <div
-                    class="yotpo yotpo-main-widget"
-                    data-product-id="<%=@pageData ['KeyValuePairs']['code-rezdy']['value'].as_text%>"
-                    data-name="<%= @title %>"
-                    data-url="http://www.solede.com/<%= @category.slug %>/<%= @pageData ['slug']%>"
-                    data-image-url="<%= @pageData ['images'][0]['url'] %>"
-                    data-description="<%= @pageData ['sections']['overview']['body'] %>">
-                </div>
-            </div>
-        </div>
-
+    <div class="large-12 medium-12 columns">
+        <h1 ><%= @category["categoria.title"].as_text %> - <%= @pageData ['title'] %></h1>
+        <p class="abstract"><%= @pageData ['abstract'] %></p>
     </div>
+</div>
+<div class="row">
     <div class="large-3 medium-3 columns margin">
         <div class="row">
             <div class="large-12 medium-12 columns panel">
@@ -99,6 +62,45 @@ description: >
         <div class="row">
             <div class="large-12 medium-12 columns panel">
                 <i><%= @pageData ['sections']['overview']['body'] %></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="large-9 medium-9 columns">
+        <div class="row">
+            <div class="large-12 medium-12 columns">
+                <% @pageData ['images'].each do |i, image| %>
+                    <%= tag :img, :src => image["url"], :title => image["caption"] %>
+                <% end %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 medium-12 columns">
+                <ul class="large-block-grid-2">
+                    <li>
+                        <h2 class="subheader"> <%= @pageData ['sections']['tour-details']['title'] %></h2>
+                        <%= @pageData ['sections']['tour-details']['body'] %>
+                    </li>
+                    <li>
+                        <h2 class="subheader"> <%= @pageData ['sections']['more-info']['title'] %></h2>
+                        <i><%= @pageData ['sections']['more-info']['body'] %></i>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 medium-12 columns">
+                <div
+                    class="yotpo yotpo-main-widget"
+                    data-product-id="<%=@pageData ['KeyValuePairs']['code-rezdy']['value'].as_text%>"
+                    data-name="<%= @title %>"
+                    data-url="http://www.solede.com/<%= @category.slug %>/<%= @pageData ['slug']%>"
+                    data-image-url="<%= @pageData ['images'][0]['url'] %>"
+                    data-description="<%= @pageData ['sections']['overview']['body'] %>">
+                </div>
             </div>
         </div>
 
