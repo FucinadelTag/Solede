@@ -18,18 +18,21 @@ description: >
             <div class="row over">
                 <div class="large-12 hide-for-small">
                     <h1 >Group Tours</h1>
-                    <h3 >Tour e peronalizzati in tutta ITALIA</h3>
+                    <h3 >Tour e personalizzati in tutta ITALIA</h3>
                 </div>
             </div>
 
     </div>
 </div>
+
+<%= partial "callToAction" %>
+
 <div class="row">
     <div class="large-12 medium-12 columns">
         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
             <li class="">
                 <div class="row">
-                    <h2 class="subheader"><i class="fa fa-users"></i> Tour peronalizzati!</h2>
+                    <h2 class="subheader"><i class="fa fa-users"></i> Tour personalizzati!</h2>
                     <hr/>
                     <div class="small-12 small-6 large-6 medium-6 columns">
                     <p>I nostri tour rispondono alle esigenze di ogni tipologia di clienti.</p>
@@ -74,6 +77,15 @@ description: >
         <div class="row">
             <h2 class="subheader">SOLEDE TOURS - Al servizio dei nostri clienti!</h2>
             <hr/>
+            <div id="formContatti" class="wufooNew large-6 medium-6 columns">
+                <p class="header">
+                    <span class="big">Fill out this form and get in touch with us</span><br />
+                    <span class="medium">We will respond you within 12 hours</span>
+                </p>
+
+                <%= partial "wufooForm" %>
+
+            </div>
             <div class="small-12 large-6 medium-6 columns">
                         <ul class="big">
                             <p><i class="fa fa-cubes"></i> Itinerari su misura</p>
@@ -96,19 +108,16 @@ description: >
                         </ul>
                     </div>
             </div>
-            <div class="large-6 medium-6 columns show-for-medium-up">
-                <img src="http://placehold.it/600x600&text=[img]" title="Solede Group Tour" />
-            </div>
         </div>
 
     </div>
 </div>
-<div class="row">
-                <hr>
 
-            <div class="large-12 medium-12 columns" >
+<div class="row">
+    <hr>
+        <div class="large-12 medium-12 columns" >
             <h2 id="titleLavori" class="subheader">Alcuni esempi del nostro lavoro</h2>
-                <div class="row" data-equalizer="cosaFacciamo">
+                <div class="row">
                     <div class="small-12 columns panel radius">
                             <h4><i class="fa fa-plane"></i> Mr and Ms Pinco Pallino - Tour in italia per 2 persone</h4>
                             <hr>
@@ -121,7 +130,6 @@ description: >
                                     </ul>
                                 </div>
                             </div>
-                            <p />
                             <div  class="row">
                                 <div class="medium-6 columns">
                                     <h4><i>About</i></h4>
@@ -134,7 +142,6 @@ description: >
                                     </p>
                                     <h4><i>Il nostro lavoro</i></h4>
                                     <hr>
-                                    <p>
                                     <ol>
                                         <li>Acquisizione delle richieste del cliente</li>
                                         <li>Definizione dell'itinerario insieme al tour operator locale</li>
@@ -143,7 +150,6 @@ description: >
                                         <li>Prenotazione Hotel</li>
                                         <li>Visite guidate alle città di Milano</li>
                                     </ol>
-                                    </p>
 
                                 </div>
                                 <div class="medium-6 columns">
@@ -169,6 +175,10 @@ description: >
                                 </div>
                             </div>
                     </div>
+                </div>
+
+                    <%= partial "callToAction" %>
+                <div class="row">
                     <div class="small-12 columns panel radius">
                         <h4><i class="fa fa-plane"></i> University of Pinco Pallo - Tour per 30 studenti univeritari</h4>
                         <hr>
@@ -181,7 +191,6 @@ description: >
                                 </ul>
                             </div>
                         </div>
-                        <p />
                         <div  class="row">
                             <div class="medium-6 columns">
                                 <h4><i>About</i></h4>
@@ -268,6 +277,11 @@ description: >
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <%= partial "callToAction" %>
+
+                <div class="row">
                     <div class="small-12 columns panel radius">
                         <h4><i class="fa fa-plane"></i> Famiglia Pinco Pallo - Tour per una famiglia di 5 persone</h4>
                         <hr>
@@ -280,7 +294,6 @@ description: >
                                 </ul>
                             </div>
                         </div>
-                        <p />
                         <div  class="row">
                             <div class="medium-6 columns">
                                 <h4><i>About</i></h4>
@@ -347,5 +360,6 @@ description: >
                         </div>
                     </div>
                 </div>
-            </div>
+                <%= partial "callToAction" %>
         </div>
+</div>
