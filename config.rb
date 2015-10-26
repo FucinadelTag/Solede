@@ -108,6 +108,7 @@ activate :blog do |blog|
     }
 end
 
+page "/feed.xml", layout: false
 page "blog/*", :layout => :blog
 
 
