@@ -19,14 +19,12 @@ Tags: <strong><%= tagname %></strong>
         <article>
             <div class="row">
                 <div class="large-12 columns">
+                    <%= partial(:header_post, :locals => { :article => article}) %>
                     <% link_to article do %>
                         <%= tag :img, :src => article.metadata[:page]["image"], :title => article.title %>
                     <% end %>
-                    <div class="over">
-                      <%= partial("header_post", :locals => { :article => article}) %>
-                    </div>
                     <%= article.summary %>
-                    <%= link_to 'Read more...', article %>
+                    <%= link_to 'Leggi tutto…', article %>
                 </div>
             </div>
         </article>
