@@ -1,5 +1,8 @@
 <div class="row margin">
     <div class="large-12 medium-12 columns">
-
+        <li><%= link_to 'Blog', '/blog' %></li>
+            <% if current_page.metadata[:page]['category'] %>
+                <li><%= link_to current_page.metadata[:page]['category'].gsub('_', ' '), category_path(current_page.metadata[:page]['category']) %></li>
+            <% end %>
     </div>
 </div>
