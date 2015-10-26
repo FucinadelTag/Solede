@@ -85,9 +85,9 @@ activate :blog do |blog|
     # blog.layout = "main"
     # blog.summary_separator = /(READMORE)/
     # blog.summary_length = 250
-    blog.year_link = nil
-    blog.month_link = nil
-    blog.day_link = nil
+    # blog.year_link = "{year}.html"
+    # blog.month_link = "{year}/{month}.html"
+    # blog.day_link = "{year}/{month}/{day}.html"
     blog.default_extension = ".erb"
 
     blog.tag_template = "tag.html"
