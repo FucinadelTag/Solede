@@ -4,16 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%
-      site = prismic.get_by_tags ('site')
-      siteData = prismic.getBlockData (site.first)
-      pageData = siteData['blocks']['milano']
 
-    %>
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= data.page.title || pageData ['title'] %></title>
+    <title><%= data.page.title %></title>
 
-    <meta name="description" content="<%= data.page.description || pageData ['description'] %>">
+    <meta name="description" content="<%= data.page.description %>">
 
     <link rel="shortcut icon" href="https://lh4.googleusercontent.com/-4EFGp8NIxRg/UotMLOfvJtI/AAAAAAAAeGI/i8xYnYOxMBk/s16-no/favicon.ico" />
 
@@ -66,10 +61,10 @@
 
   <div class="row menu">
     <div class="large-2 medium-2 columns">
-        <a href="/"><%= tag :img, :src => siteData ['KeyValuePairs']['logo']['picture'].get_view('little').url, :title => siteData ['KeyValuePairs']['logo']['value'].as_text %></a>
+        <a href="/"><%= tag :img, :src => "https://prismic-io.s3.amazonaws.com/solede/ad1a0872cb0cc3f8bbdc38aec95e622b7bff6b0a.png", :title => "Solede Tours" %></a>
     </div>
     <div class="large-8 medium-8 columns show-for-large-up">
-        <span class="payoff"><%= siteData ['KeyValuePairs']['pay-off']['value'].as_text %></span>
+        <span class="payoff">Slog less, discover more!</span>
     </div>
     <div class="large-2 medium-2 columns show-for-large-up">
         <style>.rezdy-embedded-cart .hidden {display: none;}.rezdy-embedded-cart {cursor: hand;cursor: pointer;background: #fff;border: 1px solid #ccc;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;display: inline-block;padding: 5px 10px;}.rezdy-embedded-cart p {margin: 0;padding: 0;}.rezdy-embedded-cart .rezdy-cart-icon img {vertical-align: middle;}</style>
