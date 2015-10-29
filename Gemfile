@@ -11,6 +11,7 @@ gem "middleman-minify-html"
 gem "middleman-blog", "~> 3.5.1"
 
 gem 'middleman-imageoptim'
+gem 'eventmachine', "1.0.8"
 
 gem 'compass', '~> 0.12'
 
