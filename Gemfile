@@ -10,6 +10,8 @@ gem "middleman", "~>3.3.2"
 gem "middleman-minify-html"
 gem "middleman-blog", "~> 3.5.1"
 
+gem 'middleman-imageoptim'
+
 gem 'compass', '~> 0.12'
 
 # Prismic.io content repository
