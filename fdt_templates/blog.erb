@@ -1,0 +1,37 @@
+---
+# Warning: This file is auto-generated from the Prismic.io CMS. Local changes will overriden on next sync.
+
+title: >
+        <%= @title %>
+
+autore: <%= @autore %>
+date: <%= @date.strftime('%F') %>
+tags: <%= @tags.join(', ') %>
+image: <%= @image %>
+---
+<p class="abstract"><%= @abstract %></p>
+
+READMORE
+
+<img src="<%= @image %>" class="padding" alt="<%= @title %>" />
+
+<%= @body %>
+
+<% if @calltoactionArray.length > 0  %>
+<div class="banner center">
+    <div class="row">
+        <div class="small-12 columns">
+            <div class="veryImportant"><%= @calltoactionArray['prima_riga'].value %></div>
+                <% if @calltoactionArray['seconda_riga'].value != ''  %>
+                    <div class="important"><%= @calltoactionArray['seconda_riga'].value %></div>
+                <% end %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-6 small-centered columns">
+            <a href="<%= @calltoactionArray['link'].url %>" target="_blank" class="ctaButton"><%= @calltoactionArray['call_to_action'].value %></a>
+        </div>
+    </div>
+</div>
+<hr>
+<% end %>

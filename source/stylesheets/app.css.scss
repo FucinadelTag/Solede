@@ -331,27 +331,20 @@ h2 {
   border-width: 1px;
   border-color: darken($panel-bg, 20%);
   margin-right: rem-calc(5px);
-  padding: 10px;
-  a {
-    color: lighten($body-font-color, 30%);
-    &:hover {
-      color: lighten($body-font-color, 50%);
-    }
-  }
+  padding: 7px;
 
   span.dataPromo {
     text-transform: capitalize;
   }
 
   .veryImportant {
-    font-size: 480%;
+    font-size: 400%;
     font-weight: bold;
     color: $rosso-color;
   }
   .important {
-    font-size: 210%;
+    font-size: 250%;
     font-weight: bold;
-    margin-top: 15px;
     line-height: $paragraph-line-height;
 
   }
@@ -366,5 +359,9 @@ h2 {
     text-align: center;
   }
 
+}
+
+.center {
+  text-align: center;
 }
 
