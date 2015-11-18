@@ -1,5 +1,6 @@
-PATH
-  remote: ../FdtGems/
+GIT
+  remote: git://github.com/FucinadelTag/FdtGems
+  revision: 757a11aa68c04f3d10658197349fa0ff749b22db
   specs:
     prismic_middleman (0.0.1)
       middleman-core (>= 3.3.2)

@@ -7,17 +7,17 @@ description: >
     <%= @pageData ['description'] %>
 ---
 
-<div class="row slide">
+<div class="row slide show-for-medium-up">
     <div class="row">
         <div class="large-12 columns">
             <ul class="example-orbit" data-orbit data-options="timer:false;bullets:false;slide_number:false;">
             <% @pageData ['images'].each do |i, image| %>
                 <li>
                     <a href="<%= image["link"] %>" title="Florence Tours - Solede">
-                    <%= tag :img, :src => image["url"], :title => image["caption"] %>
-                    <div class="over">
-                        <h1><%= image["caption"] %></h1>
-                    </div>
+                        <%= tag :img, :src => image["url"], :title => image["caption"] %>
+                        <div class="over">
+                            <h1><%= image["caption"] %></h1>
+                        </div>
                     </a>
                 </li>
             <% end %>
@@ -28,7 +28,7 @@ description: >
 </div>
 
 
-<div class="row">
+<div class="row show-for-medium-up">
     <div class="large-12 medium-12 columns">
         <ul class="large-block-grid-4 medium-block-grid-4">
                 <li>
@@ -55,7 +55,7 @@ description: >
 
 <!-- Three-up Content Blocks -->
 <div class="row">
-    <div class="small-5 small-centered columns"><h1>Guided Tours in Italy</h1></div>
+    <div class="small-12 small-centered columns"><h1>Guided Tours in Italy</h1></div>
     <hr/>
 </div>
 
@@ -89,7 +89,7 @@ description: >
 </div>
 
 
-<div id="formContatti" class="row">
+<div id="formContatti" class="row padding">
 
     <div>
         <h2 class="subheader" id="chiSiamo"><%= @siteData ['KeyValuePairs']['box-form-title']['value'].as_text %></h2>
